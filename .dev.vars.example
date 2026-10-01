@@ -1,0 +1,3 @@
+# Local-only Worker values. Copy to .dev.vars and replace every placeholder.
+TURNSTILE_SECRET=REPLACE_WITH_TURNSTILE_SECRET
+EMAIL_FROM=REPLACE_WITH_ONBOARDED_SENDER_ADDRESS

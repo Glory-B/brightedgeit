@@ -59,6 +59,7 @@
 
     <link rel="preload" href="style.min.css" as="style">
     <link rel="stylesheet" href="style.min.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script async src="https://plausible.io/js/pa-lddVoPgvmweKFGVREUaLe.js"></script>
     <script>
         window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
@@ -245,12 +246,7 @@
                 <p class="contact-form-helper">Not sure where to start? <a href="health-check.html">Get a Free IT Health
                         Check</a>.</p>
 
-                <form class="contact-form reveal" id="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="plausible('lead_form_submit')"
-                    netlify-honeypot="bot-field" novalidate>
-                    <input type="hidden" name="form-name" value="contact">
-                    <p class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
+                <form class="contact-form reveal" id="contact-form" method="POST" onsubmit="plausible('lead_form_submit')" novalidate>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name <span class="required">*</span></label>
@@ -319,6 +315,8 @@
                         </label>
                         <div class="error-message" id="privacy-error">You must agree to the privacy policy</div>
                     </div>
+
+                    <div class="cf-turnstile" data-sitekey="REPLACE_WITH_TURNSTILE_SITEKEY" data-action="contact"></div>
 
                     <button type="submit" class="submit-btn">Send Message</button>
                     <p class="contact-form-note">No spam. No sales pressure. Just clear,

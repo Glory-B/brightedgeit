@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "brightedge-v2-contact",
+  "main": "./src/index.js",
+  "compatibility_date": "2026-10-02",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
+    "not_found_handling": "404-page",
+    "html_handling": "none"
+  },
+  "send_email": [
+    {
+      "name": "CONTACT_EMAIL",
+      "destination_address": "REPLACE_WITH_VERIFIED_DESTINATION_EMAIL"
+    }
+  ]
+}
