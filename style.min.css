@@ -859,6 +859,11 @@ body:not(.home-page) .top-bar+nav {
     padding-bottom: 64px;
 }
 
+.home-page #microsoft-capabilities.home-section {
+    padding-top: 40px;
+    padding-bottom: 16px;
+}
+
 .home-tech-grid {
     max-width: 980px;
     margin: 0 auto;
