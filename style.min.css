@@ -245,6 +245,8 @@ body:not(.home-page) .top-bar+nav {
     content: " \25BE";
     font-size: 0.8em;
     margin-left: 4px;
+    display: inline-block;
+    vertical-align: middle;
     transition: transform var(--transition-fast);
 }
 

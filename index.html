@@ -12,7 +12,6 @@
       "description": "Practical IT support and project delivery for Perth small businesses.",
       "url": "https://brightedgeit.com.au",
       "logo": "https://brightedgeit.com.au/assets/logo1.webp",
-      "foundingDate": "2014",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "0431644181",
@@ -23,23 +22,21 @@
       },
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Gosnells",
+        "addressLocality": "Perth",
         "addressRegion": "WA",
         "addressCountry": "AU"
-      },
-      "sameAs": []
+      }
     }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Managed IT services for Perth businesses. We plan, deliver and support cloud, security, data and service desk so teams stay productive and confident.">
+    <meta name="description" content="Microsoft IT consulting and support for Perth businesses, including Microsoft 365, endpoint management, security and practical IT support.">
     <meta name="keywords"
         content="IT consulting, cloud solutions, cybersecurity, data analytics, digital transformation">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="BrightEdge IT - IT Excellence Simplified">
     <meta property="og:description"
-        content="Managed IT services for Perth businesses. Cloud, security, support and infrastructure — one team, one clear monthly fee.">
+        content="Microsoft IT consulting and support for Perth businesses, including Microsoft 365, endpoint management and security.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://brightedgeit.com.au/">
     <meta property="og:image" content="https://brightedgeit.com.au/assets/og-image.webp">
@@ -49,7 +46,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BrightEdge IT - IT Excellence Simplified">
     <meta name="twitter:description"
-        content="Managed IT services for Perth businesses. Cloud, security, support and infrastructure.">
+        content="Microsoft IT consulting, Microsoft 365, endpoint management and security for Perth businesses.">
     <meta name="twitter:image" content="https://brightedgeit.com.au/assets/og-image.webp">
 
     <!-- Theme Color -->
@@ -63,7 +60,7 @@
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
     <link rel="manifest" href="/manifest.json">
 
-    <title>Managed IT Services for Perth Businesses | BrightEdge IT</title>
+    <title>Microsoft IT Consulting &amp; Support for Perth Businesses | BrightEdge IT</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://brightedgeit.com.au/">
@@ -114,15 +111,16 @@
                 <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
                 <li class="dropdown">
                     <a href="services.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Services</a>
-                    <div class="dropdown-content">
-                        <a href="cloud-solutions.html">Cloud Solutions</a>
+                    <div class="dropdown-content">                        <a href="services.html#microsoft-365">Microsoft 365</a>
+                        <a href="services.html#intune">Endpoint &amp; Intune</a>
+                        <a href="services.html#entra">Entra ID &amp; Identity</a>
                         <a href="cybersecurity.html">Cybersecurity</a>
-                        <a href="data-analytics.html">Data Analytics</a>
+                        <a href="servicedesk.html">Managed IT Support</a>
+                        <a href="cloud-solutions.html">Cloud Solutions</a>
                         <a href="it-infrastructure.html">IT Infrastructure</a>
-                        <a href="servicedesk.html">IT Support</a>
                         <a href="ai-solutions.html">AI Solutions</a>
-                        <a href="digital-transformation.html">Digital Services</a>
-                    </div>
+                        <a href="data-analytics.html">Data Analytics</a>
+                        <a href="digital-transformation.html">Digital Transformation</a>                    </div>
                 </li>
                 <li class="dropdown">
                     <a href="pricing.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Pricing</a>
@@ -132,7 +130,6 @@
                     </div>
                 </li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -149,15 +146,16 @@
                     Services
                 </button>
                 <div class="mobile-dropdown-menu">
-                    <a href="services.html">All Services</a>
-                    <a href="cloud-solutions.html">Cloud Solutions</a>
+                    <a href="services.html">All Services</a>                    <a href="services.html#microsoft-365">Microsoft 365</a>
+                    <a href="services.html#intune">Endpoint &amp; Intune</a>
+                    <a href="services.html#entra">Entra ID &amp; Identity</a>
                     <a href="cybersecurity.html">Cybersecurity</a>
-                    <a href="data-analytics.html">Data Analytics</a>
+                    <a href="servicedesk.html">Managed IT Support</a>
+                    <a href="cloud-solutions.html">Cloud Solutions</a>
                     <a href="it-infrastructure.html">IT Infrastructure</a>
-                    <a href="servicedesk.html">IT Support</a>
                     <a href="ai-solutions.html">AI Solutions</a>
-                    <a href="digital-transformation.html">Digital Services</a>
-                </div>
+                    <a href="data-analytics.html">Data Analytics</a>
+                    <a href="digital-transformation.html">Digital Transformation</a>                </div>
             </div>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
@@ -169,7 +167,6 @@
                 </div>
             </div>
             <a href="about.html">About</a>
-            <a href="testimonials.html">Testimonials</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
@@ -180,16 +177,18 @@
         <section id="home" class="hero home-hero">
             <canvas id="networkCanvas"></canvas>
             <div class="hero-content reveal">
-                <h1>IT services for Perth businesses. <br><span>Clear, reliable delivery.</span></h1>
-                <p>We plan, deliver, and support the IT your team relies on.</p>
+                <h1>Microsoft IT for Perth businesses.<br><span>Secure. Managed. Built to work.</span></h1>
+                <p>Microsoft 365, Intune, identity, security and practical IT support for growing businesses.</p>
                 <div class="cta-links">
-                    <a href="contact.html" class="cta-btn">Talk to our team</a>
-                    <a href="services.html" class="cta-link">View services</a>
+                    <a href="#contact" class="cta-btn">Book a Consultation</a>
+                    <a href="services.html" class="cta-link">Explore Services</a>
                 </div>
-                <div class="home-proof-pill">
-                    <span class="home-proof-highlight">150+ projects</span>
-                    <span class="home-proof-text">• Perth-based • 99% uptime target</span>
-                </div>
+            </div>
+        </section>
+
+        <section class="home-section" aria-label="Microsoft capabilities">
+            <div class="container">
+                <p class="section-subtitle" style="margin-bottom: 0; text-align: center;">Microsoft 365 &middot; Intune &middot; Entra ID &middot; Defender &middot; Azure &middot; Managed IT</p>
             </div>
         </section>
 
@@ -292,157 +291,38 @@
         <!-- Why Choose Us -->
         <section id="why-choose-us" class="home-section why-choose-section">
             <div class="container">
-                <h2 class="section-title">Why Perth Businesses Choose Us</h2>
-                <p class="section-subtitle">For small businesses that rely on technology to operate smoothly</p>
+                <h2 class="section-title">Why BrightEdge</h2>
                 <div class="why-choose-grid">
-                    <div class="why-choose-item reveal">
-                        <div class="why-choose-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </div>
-                        <h3>Direct access</h3>
-                        <p>Work with an experienced IT professional directly. No call centres, no runaround.</p>
-                    </div>
-                    <div class="why-choose-item reveal">
-                        <div class="why-choose-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 15a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 4h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 11.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>Fast, clear support</h3>
-                        <p>Quick response times and plain-English communication &mdash; always.</p>
-                    </div>
-                    <div class="why-choose-item reveal">
-                        <div class="why-choose-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                            </svg>
-                        </div>
-                        <h3>Security-first</h3>
-                        <p>Enterprise-grade security thinking, sized and priced for small business.</p>
-                    </div>
-                    <div class="why-choose-item reveal">
-                        <div class="why-choose-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 11 12 14 22 4"></polyline>
-                                <path
-                                    d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>No lock-in contracts</h3>
-                        <p>Month-to-month arrangements. We earn your business every month.</p>
-                    </div>
-                    <div class="why-choose-item reveal">
-                        <div class="why-choose-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>Perth-based &amp; local</h3>
-                        <p>We understand local businesses. On-site visits available when needed.</p>
-                    </div>
-                    <div class="why-choose-item reveal">
-                        <div class="why-choose-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="1" x2="12" y2="23"></line>
-                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                            </svg>
-                        </div>
-                        <h3>Predictable pricing</h3>
-                        <p>One clear monthly fee &mdash; no surprise invoices or hidden costs.</p>
-                    </div>
+                    <div class="why-choose-item reveal"><h3>Practical Microsoft expertise</h3><p>Hands-on experience across Microsoft platforms, users, devices and security.</p></div>
+                    <div class="why-choose-item reveal"><h3>Clear recommendations</h3><p>Technology choices explained in practical business terms.</p></div>
+                    <div class="why-choose-item reveal"><h3>Security-minded delivery</h3><p>Identity, endpoint and cloud security considered from the beginning.</p></div>
+                    <div class="why-choose-item reveal"><h3>Built around your environment</h3><p>Solutions shaped around how your team actually works.</p></div>
                 </div>
             </div>
         </section>
 
         <!-- Healthcheck CTA -->
-        <section class="home-section healthcheck-strip">
+        <section class="home-section">
             <div class="container">
-                <div class="healthcheck-card">
-                    <div class="healthcheck-copy">
-                        <h2>Free IT Health Check for Perth Businesses</h2>
-                        <p>Unsure if your systems are secure or set up properly? We'll review your setup and show you
-                            risks, gaps, and quick improvements.</p>
-                    </div>
-                    <a href="health-check.html" class="cta-btn">Get My Free IT Review</a>
+                <h2 class="section-title">How we help</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card"><h3>Microsoft environment clean-up</h3><p>We improve identity, device, licensing and security configuration.</p></div>
+                    <div class="testimonial-card"><h3>Endpoint management rollout</h3><p>We bring company devices under consistent Intune policies.</p></div>
+                    <div class="testimonial-card"><h3>Security uplift</h3><p>We strengthen Microsoft 365, Defender and access controls.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section id="testimonials" class="testimonials home-section">
-            <div class="container">
-                <h2 class="section-title">Client Success Stories</h2>
-                <p class="section-subtitle">Trusted by Perth teams and Australian businesses</p>
-                <div class="testimonials-grid">
-                    <figure class="testimonial-card">
-                        <blockquote>
-                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div>
-                            <p class="home-testimonial-lead">
-                                "Clear visibility and fewer surprises."
-                            </p>
-                            <p class="testimonial-text">"BrightEdge IT stabilized our core systems and made cloud
-                                migration straightforward. Communication was clear and issues were resolved quickly."
-                            </p>
-                        </blockquote>
-                        <figcaption>
-                            <div class="testimonial-author">Client – Perth</div>
-                            <div class="testimonial-role">Operations Manager — Construction (Perth)</div>
-                        </figcaption>
-                    </figure>
-                    <figure class="testimonial-card">
-                        <blockquote>
-                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div>
-                            <p class="home-testimonial-lead">
-                                "Security felt manageable, not overwhelming."
-                            </p>
-                            <p class="testimonial-text">"They implemented practical controls and helped our team stay on
-                                top of risk without slowing daily work."</p>
-                        </blockquote>
-                        <figcaption>
-                            <div class="testimonial-author">Client – Perth</div>
-                            <div class="testimonial-role">Office Manager — Healthcare (Perth)</div>
-                        </figcaption>
-                    </figure>
-                    <figure class="testimonial-card">
-                        <blockquote>
-                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div>
-                            <p class="home-testimonial-lead">
-                                "Automation that fits our workflow."
-                            </p>
-                            <p class="testimonial-text">"They focused on practical use cases and smooth integration with
-                                our existing tools. The team spends less time on repetitive tasks."</p>
-                        </blockquote>
-                        <figcaption>
-                            <div class="testimonial-author">Client – Perth</div>
-                            <div class="testimonial-role">Director — SME Retail (Perth)</div>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
+        <section class="home-section healthcheck-strip">
+            <div class="container"><div class="healthcheck-card"><div class="healthcheck-copy"><h2>Not sure where the problems are?</h2><p>Get a practical review of your Microsoft environment, device management and security posture.</p></div><a href="health-check.html" class="cta-btn">Request an IT Health Check</a></div></div>
         </section>
 
         <!-- Contact -->
         <section id="contact" class="contact-form-section home-section">
             <div class="form-container">
-                <p class="form-reassurance">No obligation.<br>We respond within 1 business day.<br>Straight answers — no
+                <p class="form-reassurance">No obligation.<br>We'll review your message and get back to you to arrange a time to talk.<br>Straight answers — no
                     pressure.</p>
-                <h2 class="section-title">Send Us a Message</h2>
+                <h2 class="section-title">Tell us what you need help with.</h2>
                 <p class="section-subtitle">Send the form and we’ll get back to you shortly.</p>
 
                 <form class="contact-form reveal" id="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="plausible('lead_form_submit')"
@@ -512,13 +392,6 @@
 
                     <div class="checkbox-group">
                         <label class="checkbox-label">
-                            <input type="checkbox" id="newsletter" name="newsletter">
-                            <span>I'd like to receive updates and news from BrightEdge IT</span>
-                        </label>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <label class="checkbox-label">
                             <input type="checkbox" id="privacy" name="privacy" required>
                             <span>I agree to the <a href="privacy.html" class="link-highlight">Privacy Policy</a> and <a
                                     href="terms.html" class="link-highlight">Terms of Service</a> <span
@@ -531,7 +404,7 @@
 
                     <div class="form-success" id="form-success">
                         <strong>— Message sent successfully.</strong><br>
-                        Thanks for getting in touch. We’ll respond within 24 hours.
+                        Thanks for getting in touch. We'll review your message and get back to you to arrange a time to talk.
                     </div>
                 </form>
             </div>
@@ -555,7 +428,6 @@
             <div class="footer-section">
                 <h4>Company</h4>
                 <a href="about.html">About Us</a>
-                <a href="testimonials.html">Testimonials</a>
                 <a href="contact.html">Contact</a>
                 <a href="contact.html?subject=careers">Careers</a>
             </div>
@@ -587,24 +459,7 @@
                     </svg>
                     Perth, Western Australia
                 </p>
-            </div>
-            <div class="footer-section newsletter-section">
-                <h4>Stay Updated</h4>
-                <p style="margin-bottom: 15px;">Get IT insights delivered to your inbox</p>
-                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true" onsubmit="plausible('lead_form_submit')">
-                    <input type="hidden" name="form-name" value="newsletter">
-                    <input type="email" name="email" placeholder="Your email" required
-                        aria-label="Email for newsletter">
-                    <button type="submit" aria-label="Subscribe to newsletter">
-                        Subscribe
-                    </button>
-                </form>
-                <p class="newsletter-privacy"
-                    style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 10px;">
-                    We respect your privacy. Unsubscribe anytime.
-                </p>
-            </div>
-        </div>
+            </div>`r`n</div>
         <div class="footer-bottom">
             <p>Copyright &copy; <span id="copyright-year"></span> BrightEdge IT. All rights reserved. | <a
                     href="privacy.html">Privacy Policy</a> |

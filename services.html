@@ -12,7 +12,6 @@
       "description": "Practical IT support and project services for Perth small businesses.",
       "url": "https://brightedgeit.com.au",
       "logo": "https://brightedgeit.com.au/assets/logo1.webp",
-      "foundingDate": "2014",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "0431644181",
@@ -23,13 +22,10 @@
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Technology Drive",
-        "addressLocality": "Gosnells",
+        "addressLocality": "Perth",
         "addressRegion": "WA",
-        "postalCode": "6110",
         "addressCountry": "AU"
-      },
-      "sameAs": []
+      }
     }
     </script>
     <!-- Service Schema -->
@@ -127,15 +123,16 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li class="dropdown">
                     <a href="services.html" class="nav-link active" aria-current="page" aria-haspopup="true" aria-expanded="false">Services</a>
-                    <div class="dropdown-content">
-                        <a href="cloud-solutions.html">Cloud Solutions</a>
+                    <div class="dropdown-content">                        <a href="services.html#microsoft-365">Microsoft 365</a>
+                        <a href="services.html#intune">Endpoint &amp; Intune</a>
+                        <a href="services.html#entra">Entra ID &amp; Identity</a>
                         <a href="cybersecurity.html">Cybersecurity</a>
-                        <a href="data-analytics.html">Data Analytics</a>
+                        <a href="servicedesk.html">Managed IT Support</a>
+                        <a href="cloud-solutions.html">Cloud Solutions</a>
                         <a href="it-infrastructure.html">IT Infrastructure</a>
-                        <a href="servicedesk.html">IT Support</a>
                         <a href="ai-solutions.html">AI Solutions</a>
-                        <a href="digital-transformation.html">Digital Services</a>
-                    </div>
+                        <a href="data-analytics.html">Data Analytics</a>
+                        <a href="digital-transformation.html">Digital Transformation</a>                    </div>
                 </li>
                 <li class="dropdown">
                     <a href="pricing.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Pricing</a>
@@ -145,7 +142,6 @@
                     </div>
                 </li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -162,15 +158,16 @@
                     Services
                 </button>
                 <div class="mobile-dropdown-menu">
-                    <a href="services.html">All Services</a>
-                    <a href="cloud-solutions.html">Cloud Solutions</a>
+                    <a href="services.html">All Services</a>                    <a href="services.html#microsoft-365">Microsoft 365</a>
+                    <a href="services.html#intune">Endpoint &amp; Intune</a>
+                    <a href="services.html#entra">Entra ID &amp; Identity</a>
                     <a href="cybersecurity.html">Cybersecurity</a>
-                    <a href="data-analytics.html">Data Analytics</a>
+                    <a href="servicedesk.html">Managed IT Support</a>
+                    <a href="cloud-solutions.html">Cloud Solutions</a>
                     <a href="it-infrastructure.html">IT Infrastructure</a>
-                    <a href="servicedesk.html">IT Support</a>
                     <a href="ai-solutions.html">AI Solutions</a>
-                    <a href="digital-transformation.html">Digital Services</a>
-                </div>
+                    <a href="data-analytics.html">Data Analytics</a>
+                    <a href="digital-transformation.html">Digital Transformation</a>                </div>
             </div>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
@@ -182,7 +179,6 @@
                 </div>
             </div>
             <a href="about.html">About</a>
-            <a href="testimonials.html">Testimonials</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
@@ -193,8 +189,8 @@
         <section class="hero services-hero">
             <div class="hero-content reveal">
                 <h1>Services</h1>
-                <p>Practical IT support, Microsoft 365, and security for Perth teams of 5-50. Clear advice. Fast response. No lock-in.</p>
-                <a href="contact.html" class="services-hero-link">Need a custom solution? Contact us &#8594;</a>
+                <p>Practical IT support, Microsoft 365, and security for Perth teams of 5-50. Clear advice. Fast response. Flexible support options.</p>
+                <a href="contact.html" class="services-hero-link">Book a Consultation &#8594;</a>
                 <div class="hero-divider" aria-hidden="true"></div>
             </div>
         </section>
@@ -209,31 +205,36 @@
             <div class="toc-sidebar">
                 <h4
                     style="color: #ff6b35; font-size: 14px; margin-bottom: 10px; padding-left: 12px; text-transform: uppercase; letter-spacing: 1px;">
-                    Services</h4>
-                <a class="toc-link" href="#cloud">
-                    Cloud Solutions
-                </a>
-                <a class="toc-link" href="#security">
-                    Cybersecurity
-                </a>
-                <a class="toc-link" href="#analytics">
-                    Data Analytics
-                </a>
-                <a class="toc-link" href="#infrastructure">
-                    IT Infrastructure
-                </a>
-                <a class="toc-link" href="#servicedesk">
-                    IT Support
-                </a>
-                <a class="toc-link" href="#ai">
-                    AI Solutions
-                </a>
-                <a class="toc-link" href="#digital">
-                    Digital Services
-                </a>
+                    Services</h4>                <a class="toc-link" href="#microsoft-365">Microsoft 365</a>
+                <a class="toc-link" href="#intune">Intune / Endpoint Management</a>
+                <a class="toc-link" href="#entra">Entra ID / Identity</a>
+                <a class="toc-link" href="#security">Cybersecurity</a>
+                <a class="toc-link" href="#servicedesk">Managed IT Support</a>
+                <a class="toc-link" href="#cloud">Cloud</a>
+                <a class="toc-link" href="#infrastructure">Infrastructure</a>
+                <a class="toc-link" href="#ai">AI Solutions</a>
+                <a class="toc-link" href="#analytics">Data Analytics</a>
+                <a class="toc-link" href="#digital">Digital Transformation</a>
             </div>
 
-            <div class="services-content">
+            <div class="services-content">                <article class="service-section" id="microsoft-365">
+                    <div class="service-header"><div><h2>Microsoft 365</h2><p style="font-size:19px;color:#a1a1a6;">Administration for the tools your team uses every day</p></div></div>
+                    <p class="service-description">We help manage Microsoft 365 so users, licences and collaboration tools stay organised. Support is shaped around how your business uses Exchange, Teams and SharePoint.</p>
+                    <div class="service-details"><div class="detail-column"><h3>Capabilities</h3><ul class="feature-list"><li>User and licence administration</li><li>Exchange and mailbox support</li><li>Teams and SharePoint configuration</li><li>Microsoft 365 administration</li></ul></div></div>
+                    <a class="cta-link" href="contact.html" style="display:inline-flex;margin-top:14px;">Book a Consultation</a>
+                </article>
+                <article class="service-section" id="intune">
+                    <div class="service-header"><div><h2>Intune / Endpoint Management</h2><p style="font-size:19px;color:#a1a1a6;">Consistent management for business devices</p></div></div>
+                    <p class="service-description">We help bring managed devices under consistent Intune configuration and policies. This supports device enrolment, compliance and practical day-to-day endpoint management.</p>
+                    <div class="service-details"><div class="detail-column"><h3>Capabilities</h3><ul class="feature-list"><li>Device enrolment and configuration</li><li>Compliance and endpoint policies</li><li>Application deployment</li><li>Managed device support</li></ul></div></div>
+                    <a class="cta-link" href="contact.html" style="display:inline-flex;margin-top:14px;">Book a Consultation</a>
+                </article>
+                <article class="service-section" id="entra">
+                    <div class="service-header"><div><h2>Entra ID / Identity</h2><p style="font-size:19px;color:#a1a1a6;">Identity controls that support secure access</p></div></div>
+                    <p class="service-description">We help administer identities and access across Microsoft environments. The focus is on practical user lifecycle processes and security controls that fit your organisation.</p>
+                    <div class="service-details"><div class="detail-column"><h3>Capabilities</h3><ul class="feature-list"><li>Identity and access administration</li><li>MFA and Conditional Access support</li><li>User lifecycle management</li><li>Identity security controls</li></ul></div></div>
+                    <a class="cta-link" href="contact.html" style="display:inline-flex;margin-top:14px;">Book a Consultation</a>
+                </article>
 
                 <!-- Cloud Solutions -->
                 <article class="service-section" id="cloud">
@@ -754,7 +755,6 @@
             <div class="footer-section">
                 <h4>Company</h4>
                 <a href="about.html">About Us</a>
-                <a href="testimonials.html">Testimonials</a>
                 <a href="contact.html">Contact</a>
                 <a href="contact.html?subject=careers">Careers</a>
             </div>
@@ -783,23 +783,7 @@
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>Perth, Western Australia</p>
-            </div>
-            <div class="footer-section newsletter-section">
-                <h4>Stay Updated</h4>
-                <p style="margin-bottom: 15px;">Get IT insights delivered to your inbox</p>
-                <form class="newsletter-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true" onsubmit="plausible('lead_form_submit')">
-                    <input type="hidden" name="form-name" value="newsletter">
-                    <input type="email" name="email" placeholder="Your email" required aria-label="Email for newsletter">
-                    <button type="submit" aria-label="Subscribe to newsletter">
-                        Subscribe
-                    </button>
-                </form>
-                <p class="newsletter-privacy"
-                    style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 10px;">
-                    We respect your privacy. Unsubscribe anytime.
-                </p>
-            </div>
-        </div>
+            </div>`r`n</div>
         <div class="footer-bottom">
             <p>Copyright &#169; <span id="copyright-year"></span> BrightEdge IT. All rights reserved. | <a
                     href="privacy.html">Privacy Policy</a> |
