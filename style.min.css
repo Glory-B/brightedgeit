@@ -677,9 +677,6 @@ body:not(.home-page) .top-bar+nav {
     font-size: 0.86rem;
     font-weight: 600;
     white-space: nowrap;
-    background: transparent;
-    cursor: pointer;
-    font-family: inherit;
 }
 
 .home-page .service-nav-link svg {
@@ -707,18 +704,6 @@ body:not(.home-page) .top-bar+nav {
 .home-page .service-nav-link.is-featured {
     color: var(--color-brand-primary);
     border-color: rgba(255, 107, 53, 0.45);
-    background: rgba(255, 107, 53, 0.06);
-}
-
-.home-page .service-nav-link[aria-selected="true"]::after {
-    content: '';
-    position: absolute;
-    right: 18px;
-    bottom: 5px;
-    left: 18px;
-    height: 2px;
-    border-radius: 999px;
-    background: var(--color-brand-primary);
 }
 
 .home-page .services-eyebrow,
@@ -757,115 +742,9 @@ body:not(.home-page) .top-bar+nav {
 }
 
 .home-page .services-showcase-grid {
-    display: block;
-}
-
-.home-page .supporting-services-grid[hidden] {
-    display: none;
-}
-
-.home-page .selected-service-panel {
-    position: relative;
-    min-height: 430px;
-    overflow: hidden;
-    padding: 38px;
-    border: 1px solid rgba(255, 107, 53, 0.58);
-    border-radius: var(--radius-lg);
-    background: var(--color-bg-secondary);
-    transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.home-page .selected-service-panel.is-transitioning {
-    opacity: 0.45;
-    transform: translateY(3px);
-}
-
-.home-page .selected-service-panel .service-icon,
-.home-page .selected-service-panel h3,
-.home-page .selected-service-panel > p,
-.home-page .selected-service-panel .featured-service-list {
-    max-width: 53%;
-}
-
-.home-page .selected-service-panel .service-icon {
-    margin-bottom: 18px;
-}
-
-.home-page .selected-service-panel h3 {
-    margin-bottom: 10px;
-    color: var(--color-text-primary);
-    font-size: clamp(2rem, 3vw, 2.7rem);
-}
-
-.home-page .selected-service-panel > p {
-    margin-bottom: 0;
-    color: var(--color-text-secondary);
-    font-size: 1rem;
-}
-
-.home-page .selected-service-panel .featured-service-list {
-    display: grid;
-    gap: 8px;
-    margin: 22px 0 0;
-    color: var(--color-text-secondary);
-}
-
-.home-page .selected-service-panel .featured-service-list li::before {
-    content: '\2022';
-    margin-right: 9px;
-    color: var(--color-brand-primary);
-}
-
-.home-page .selected-service-visual {
-    position: absolute;
-    right: 28px;
-    bottom: 34px;
-    width: min(42%, 360px);
-    color: rgba(148, 163, 184, 0.76);
-}
-
-.home-page .selected-service-visual .featured-service-illustration {
-    position: static;
-    width: 100%;
-}
-
-.home-page .selected-service-visual svg,
-.home-page .selected-service-panel .service-icon svg {
-    width: 100%;
-    height: auto;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2;
-}
-
-.home-page .selected-service-visual circle {
-    fill: var(--color-brand-primary);
-    stroke: none;
-}
-
-.home-page .selected-service-cta {
-    display: inline-flex;
-    align-items: center;
-    min-height: 48px;
-    margin-top: 30px;
-    padding: 0 18px;
-    border-radius: var(--radius-md);
-    background: var(--color-brand-primary);
-    color: #fff;
-    font-size: 0.95rem;
-    font-weight: 700;
-}
-
-.home-page .selected-service-cta:hover,
-.home-page .selected-service-cta:focus-visible {
-    background: var(--color-brand-hover);
-    color: #fff;
-}
-
-.home-page .selected-service-cta:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 16px;
 }
 
 .home-page .supporting-services-grid {
@@ -1036,10 +915,6 @@ body:not(.home-page) .top-bar+nav {
         grid-row: auto;
         min-height: 420px !important;
     }
-
-    .home-page .selected-service-panel {
-        min-height: 470px;
-    }
 }
 
 @media (max-width: 600px) {
@@ -1056,28 +931,6 @@ body:not(.home-page) .top-bar+nav {
 
     .home-page .services-showcase-grid {
         grid-template-columns: 1fr;
-    }
-
-    .home-page .selected-service-panel {
-        min-height: 0;
-        padding: 28px 28px 32px;
-    }
-
-    .home-page .selected-service-panel .service-icon,
-    .home-page .selected-service-panel h3,
-    .home-page .selected-service-panel > p,
-    .home-page .selected-service-panel .featured-service-list {
-        max-width: none;
-    }
-
-    .home-page .selected-service-visual {
-        position: static;
-        width: min(100%, 260px);
-        margin: 22px 0 0 auto;
-    }
-
-    .home-page .selected-service-cta {
-        margin-top: 24px;
     }
 
     .home-page .supporting-services-grid {
