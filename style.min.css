@@ -637,14 +637,19 @@ body:not(.home-page) .top-bar+nav {
 }
 
 .home-page #services.home-section {
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 56px;
 }
 
 .home-page .services-nav {
+    position: static;
+    z-index: auto;
+    width: auto;
+    height: auto;
+    backdrop-filter: none;
     display: flex;
     gap: 8px;
-    margin: 0 auto 42px;
+    margin: 0 auto 36px;
     padding: 6px;
     max-width: 1180px;
     overflow-x: auto;
