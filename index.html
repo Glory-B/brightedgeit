@@ -190,34 +190,33 @@
         <!-- Services -->
         <section id="services" class="services home-section">
             <div class="container">
-                <nav class="services-nav" aria-label="BrightEdge IT services">
-                    <a class="service-nav-link is-featured" href="services.html#microsoft-365"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg><span>Microsoft 365</span></a>
-                    <a class="service-nav-link" href="services.html#intune"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20"/></svg><span>Endpoint &amp; Intune</span></a>
-                    <a class="service-nav-link" href="services.html#entra"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg><span>Entra ID &amp; Identity</span></a>
-                    <a class="service-nav-link" href="cybersecurity.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span>Cybersecurity</span></a>
-                    <a class="service-nav-link" href="servicedesk.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><path d="M4 15h3v4H5a1 1 0 0 1-1-1v-3Zm16 0h-3v4h2a1 1 0 0 0 1-1v-3Z"/><path d="M17 20c0 1-2 1-4 1"/></svg><span>Managed IT Support</span></a>
-                    <a class="service-nav-link" href="cloud-solutions.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg><span>Cloud Solutions</span></a>
-                </nav>
-                <p class="services-eyebrow">Services</p>
+                <div class="services-nav" role="tablist" aria-label="BrightEdge IT services">
+                    <button class="service-nav-link is-featured" type="button" role="tab" id="service-tab-microsoft-365" aria-selected="true" aria-controls="service-panel" tabindex="0" data-service="microsoft-365"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg><span>Microsoft 365</span></button>
+                    <button class="service-nav-link" type="button" role="tab" id="service-tab-intune" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="intune"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20"/></svg><span>Endpoint &amp; Intune</span></button>
+                    <button class="service-nav-link" type="button" role="tab" id="service-tab-entra" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="entra"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg><span>Entra ID &amp; Identity</span></button>
+                    <button class="service-nav-link" type="button" role="tab" id="service-tab-cybersecurity" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="cybersecurity"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span>Cybersecurity</span></button>
+                    <button class="service-nav-link" type="button" role="tab" id="service-tab-managed-it" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="managed-it"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><path d="M4 15h3v4H5a1 1 0 0 1-1-1v-3Zm16 0h-3v4h2a1 1 0 0 0 1-1v-3Z"/><path d="M17 20c0 1-2 1-4 1"/></svg><span>Managed IT Support</span></button>
+                    <button class="service-nav-link" type="button" role="tab" id="service-tab-cloud" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="cloud"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg><span>Cloud Solutions</span></button>
+                </div>
                 <h2 class="section-title">Services</h2>
                 <p class="section-subtitle">Practical IT services that keep work moving.</p>
                 <div class="services-grid services-showcase-grid">
-                    <a class="service-card featured-service-panel reveal" href="services.html#microsoft-365"
-                        aria-label="Learn more about Microsoft 365">
+                    <section class="selected-service-panel reveal" role="tabpanel" id="service-panel" aria-labelledby="service-tab-microsoft-365" aria-live="polite">
                         <div class="service-icon" role="img" aria-label="Cloud icon">
                             <svg class="home-service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
                             </svg>
                         </div>
-                        <p class="featured-service-eyebrow">Featured service</p>
-                        <h3>Microsoft 365</h3>
-                        <p>Microsoft 365 configured around how your team works.</p>
-                        <ul class="featured-service-list">
+                        <h3 data-service-title>Microsoft 365</h3>
+                        <p data-service-description>Microsoft 365 configured around how your team works.</p>
+                        <ul class="featured-service-list" data-service-capabilities>
                             <li>Users and licensing</li>
                             <li>Exchange, Teams and SharePoint</li>
                             <li>Microsoft 365 administration</li>
+                            <li>Device and access integration</li>
                         </ul>
+                        <div class="selected-service-visual" data-service-visual role="img" aria-label="Generic cloud and workplace illustration">
                         <div class="featured-service-illustration" aria-hidden="true">
                             <svg viewBox="0 0 320 210" fill="none">
                                 <rect x="220" y="78" width="64" height="90" rx="7"/>
@@ -229,9 +228,10 @@
                                 <path d="m74 99 27-34m-23 39 34-1m28 2 76-27m7-6 28-4"/>
                             </svg>
                         </div>
-                        <div class="learn-more">Learn more</div>
-                    </a>
-                    <div class="supporting-services-grid">
+                        </div>
+                        <a class="selected-service-cta" href="#contact" data-service-cta>Talk to us about Microsoft 365</a>
+                    </section>
+                    <div class="supporting-services-grid" hidden aria-hidden="true">
                     <a class="service-card reveal" href="services.html#intune"
                         aria-label="Learn more about Endpoint and Intune">
                         <div class="service-icon" role="img" aria-label="Device icon">
