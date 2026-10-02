@@ -866,6 +866,49 @@ body:not(.home-page) .top-bar+nav {
     white-space: nowrap;
 }
 
+/* Endpoint & Intune dedicated service page */
+.endpoint-page { background: var(--color-bg-primary); }
+.endpoint-wrap { width: min(1320px, calc(100% - 40px)); margin: 0 auto; }
+.endpoint-hero { margin-top: var(--header-height); padding: 96px 0 68px; background: radial-gradient(circle at 72% 28%, #223b5a 0, var(--color-bg-primary) 48%); }
+.endpoint-hero-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(320px, .8fr); align-items: center; gap: 56px; }
+.endpoint-eyebrow { margin: 0 0 12px; color: var(--color-brand-primary); font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.endpoint-hero h1 { margin-bottom: 18px; font-size: clamp(2.8rem, 5vw, 4.8rem); }
+.endpoint-lead { max-width: 690px; margin-bottom: 30px; color: var(--color-text-secondary); font-size: clamp(1.05rem, 1.5vw, 1.28rem); }
+.endpoint-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+.endpoint-hero-art { color: #8fa4bd; }
+.endpoint-hero-art svg { width: 100%; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+.endpoint-hero-art circle { fill: var(--color-brand-primary); stroke: none; }
+.endpoint-service-nav { padding: 28px 0 0; background: var(--color-bg-primary); }
+.endpoint-pills { display: flex; gap: 8px; padding: 6px; overflow-x: auto; border: 1px solid var(--color-border-subtle); border-radius: 999px; background: var(--color-bg-secondary); }
+.endpoint-pills a { display: inline-flex; flex: 1 0 max-content; align-items: center; justify-content: center; min-height: 46px; padding: 10px 16px; border: 1px solid transparent; border-radius: 999px; color: var(--color-text-secondary); font-size: .86rem; font-weight: 600; white-space: nowrap; }
+.endpoint-pills a:hover, .endpoint-pills a:focus-visible { border-color: var(--color-border-highlight); color: var(--color-text-primary); outline: 2px solid var(--color-brand-primary); outline-offset: 2px; }
+.endpoint-pills .is-current { border-color: rgba(255,107,53,.55); color: var(--color-brand-primary); background: rgba(255,107,53,.06); }
+.endpoint-section { padding: 88px 0; }
+.endpoint-section-alt { background: #111d31; border-block: 1px solid rgba(148,163,184,.1); }
+.endpoint-heading { max-width: 720px; margin: 0 auto 38px; text-align: center; }
+.endpoint-heading h2 { margin-bottom: 10px; font-size: clamp(2rem, 3.6vw, 3rem); }
+.endpoint-heading > p:last-child { margin: 0; color: var(--color-text-muted); font-size: 1.05rem; }
+.endpoint-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.endpoint-card-grid article, .endpoint-detail-list article, .endpoint-faq details { border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); background: var(--color-bg-secondary); }
+.endpoint-card-grid article { min-height: 185px; padding: 28px; }
+.endpoint-card-grid article::before { display: block; width: 34px; height: 34px; margin-bottom: 18px; border: 2px solid var(--color-brand-primary); border-radius: 8px; content: ''; }
+.endpoint-card-grid h3, .endpoint-detail-list h3 { margin-bottom: 8px; font-size: 1.12rem; }
+.endpoint-card-grid p, .endpoint-detail-list p { margin: 0; color: var(--color-text-secondary); font-size: .94rem; }
+.endpoint-support-grid article::before { border-radius: 50%; }
+.endpoint-support-grid ul { display: grid; gap: 7px; color: var(--color-text-secondary); font-size: .9rem; }
+.endpoint-support-grid li::before { margin-right: 8px; color: var(--color-brand-primary); content: '•'; }
+.endpoint-detail-list { display: grid; gap: 12px; max-width: 1030px; margin: 0 auto; }
+.endpoint-detail-list article { display: grid; grid-template-columns: minmax(220px, .6fr) 1fr; gap: 28px; align-items: center; padding: 24px 28px; }
+.endpoint-detail-list h3 { margin: 0; }
+.endpoint-process { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; counter-reset: process; }
+.endpoint-process li { position: relative; min-height: 190px; padding: 64px 24px 24px; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); background: var(--color-bg-secondary); list-style: none; }
+.endpoint-process li::before { position: absolute; top: 22px; left: 24px; color: var(--color-brand-primary); font-size: .85rem; font-weight: 700; content: '0' counter(list-item); }
+.endpoint-process strong { display: block; margin-bottom: 9px; font-size: 1.15rem; }.endpoint-process span { color: var(--color-text-secondary); font-size: .92rem; }
+.endpoint-faq { max-width: 900px; }.endpoint-faq details { margin-bottom: 12px; padding: 0 22px; }.endpoint-faq summary { min-height: 64px; display:flex; align-items:center; cursor:pointer; font-weight:700; }.endpoint-faq details p { margin: 0 0 20px; color: var(--color-text-secondary); }
+.endpoint-final-cta { padding: 64px 0; background: #17253a; border-block: 1px solid rgba(255,107,53,.35); }.endpoint-final-cta .endpoint-wrap { display:flex; justify-content:space-between; align-items:center; gap:32px; }.endpoint-final-cta h2 { margin-bottom:10px; }.endpoint-final-cta p { margin:0; color:var(--color-text-secondary); }
+@media (max-width: 900px) { .endpoint-hero-grid { grid-template-columns:1fr; gap:24px; }.endpoint-hero-art { max-width:520px; margin:0 auto; }.endpoint-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.endpoint-process { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width: 600px) { .endpoint-wrap { width:min(100% - 32px, 1320px); }.endpoint-hero { padding:70px 0 42px; }.endpoint-pills { border-radius:var(--radius-lg); }.endpoint-section { padding:60px 0; }.endpoint-card-grid, .endpoint-process { grid-template-columns:1fr; }.endpoint-detail-list article { grid-template-columns:1fr; gap:8px; }.endpoint-final-cta .endpoint-wrap { display:block; }.endpoint-final-cta .endpoint-actions { margin-top:24px; }.endpoint-card-grid article { min-height:0; }.endpoint-faq details { padding:0 18px; } }
+
 .home-page .more-capabilities strong {
     color: var(--color-text-secondary);
 }
