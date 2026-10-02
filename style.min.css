@@ -641,6 +641,194 @@ body:not(.home-page) .top-bar+nav {
     padding-bottom: 56px;
 }
 
+.home-page .services-nav {
+    display: flex;
+    gap: 8px;
+    margin: 0 auto 42px;
+    padding: 6px;
+    max-width: 1180px;
+    overflow-x: auto;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--home-radius-pill);
+    background: var(--color-bg-secondary);
+    scrollbar-width: thin;
+}
+
+.home-page .service-nav-link {
+    display: inline-flex;
+    align-items: center;
+    flex: 1 0 max-content;
+    gap: 8px;
+    min-height: 46px;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: var(--home-radius-pill);
+    color: var(--color-text-secondary);
+    font-size: 0.86rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.home-page .service-nav-link svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.home-page .service-nav-link:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-border-highlight);
+    background: var(--color-bg-tertiary);
+}
+
+.home-page .service-nav-link:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+}
+
+.home-page .service-nav-link.is-featured {
+    color: var(--color-brand-primary);
+    border-color: rgba(255, 107, 53, 0.45);
+}
+
+.home-page .services-eyebrow,
+.home-page .featured-service-eyebrow {
+    margin: 0 0 8px;
+    color: var(--color-brand-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.home-page .services-showcase-grid {
+    grid-template-columns: minmax(0, 1.1fr) repeat(2, minmax(0, 0.7fr));
+    align-items: stretch;
+    gap: 16px;
+}
+
+.home-page .services-showcase-grid .service-card {
+    min-height: 238px;
+    padding: 26px;
+    border-radius: var(--radius-lg);
+    box-shadow: none;
+}
+
+.home-page .services-showcase-grid .service-card:hover,
+.home-page .services-showcase-grid .service-card:focus-visible {
+    box-shadow: none;
+}
+
+.home-page .featured-service-panel {
+    grid-row: span 3;
+    position: relative;
+    overflow: hidden;
+    min-height: 508px !important;
+    padding: 36px !important;
+    border-color: rgba(255, 107, 53, 0.38) !important;
+}
+
+.home-page .featured-service-panel .service-icon {
+    margin-bottom: 18px;
+}
+
+.home-page .featured-service-panel h3 {
+    font-size: clamp(1.8rem, 3vw, 2.55rem);
+}
+
+.home-page .featured-service-list {
+    display: grid;
+    gap: 8px;
+    margin: 22px 0 0;
+    color: var(--color-text-secondary);
+}
+
+.home-page .featured-service-list li::before {
+    content: '\2022';
+    margin-right: 9px;
+    color: var(--color-brand-primary);
+}
+
+.home-page .featured-service-illustration {
+    position: absolute;
+    right: 18px;
+    bottom: 44px;
+    width: min(64%, 280px);
+    color: rgba(148, 163, 184, 0.7);
+}
+
+.home-page .featured-service-illustration svg {
+    width: 100%;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.home-page .featured-service-illustration circle {
+    fill: var(--color-brand-primary);
+    stroke: none;
+}
+
+.home-page .featured-service-panel .learn-more {
+    position: absolute;
+    left: 36px;
+    bottom: 36px;
+}
+
+.home-page .more-capabilities {
+    margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+    .home-page .services-showcase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-page .featured-service-panel {
+        grid-column: span 2;
+        grid-row: auto;
+        min-height: 420px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-page .services-nav {
+        margin-bottom: 32px;
+        border-radius: var(--radius-lg);
+    }
+
+    .home-page .service-nav-link {
+        flex: 0 0 auto;
+        min-height: 48px;
+    }
+
+    .home-page .services-showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .featured-service-panel {
+        grid-column: auto;
+        min-height: 410px !important;
+        padding: 28px !important;
+    }
+
+    .home-page .featured-service-panel .learn-more {
+        left: 28px;
+        bottom: 28px;
+    }
+
+    .home-page .featured-service-illustration {
+        right: 10px;
+        width: 58%;
+    }
+}
+
 .home-page #about.home-section {
     padding-top: 56px;
     padding-bottom: 64px;
