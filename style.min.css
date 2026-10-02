@@ -866,6 +866,17 @@ body:not(.home-page) .top-bar+nav {
     white-space: nowrap;
 }
 
+/* Endpoint & Intune: continuous page canvas and consistent orange line icons. */
+.endpoint-page, .endpoint-page main, .endpoint-page .endpoint-hero, .endpoint-page .endpoint-section, .endpoint-page .endpoint-section-alt, .endpoint-page .endpoint-final-cta { background: var(--color-bg-primary); }
+.endpoint-page .endpoint-section-alt { border-block-color: transparent; }
+.endpoint-page .endpoint-card-grid article::before, .endpoint-page .endpoint-detail-list article::before { border: 0; border-radius: 0; box-shadow: none; background-color: transparent; background-position: center; background-repeat: no-repeat; background-size: 100%; }
+.endpoint-page .endpoint-card-grid article::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23ff6b35' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='11' width='30' height='20' rx='2'/%3E%3Cpath d='M5 36h38M20 36l3-5m5 5 3-5'/%3E%3C/svg%3E"); }
+.endpoint-page .endpoint-card-grid article:nth-child(2)::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23ff6b35' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='24' cy='24' r='8'/%3E%3Cpath d='M24 7v5m0 24v5M7 24h5m24 0h5M12 12l4 4m16 16 4 4m0-24-4 4M16 32l-4 4'/%3E%3C/svg%3E"); }
+.endpoint-page .endpoint-card-grid article:nth-child(3)::before, .endpoint-page .endpoint-card-grid article:nth-child(5)::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23ff6b35' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M24 5 10 10v10c0 9 6 15 14 19 8-4 14-10 14-19V10L24 5Z'/%3E%3Cpath d='m18 22 4 4 8-8'/%3E%3C/svg%3E"); }
+.endpoint-page .endpoint-card-grid article:nth-child(4)::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23ff6b35' stroke-width='2.5'%3E%3Cpath d='M9 9h12v12H9zm18 0h12v12H27zM9 27h12v12H9zm18 0h12v12H27z'/%3E%3C/svg%3E"); }
+.endpoint-page .endpoint-card-grid article:nth-child(6)::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23ff6b35' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M9 38V24m10 14V12m10 26V20m10 18V7'/%3E%3C/svg%3E"); }
+.endpoint-page .endpoint-detail-list article::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23ff6b35' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='8' y='11' width='24' height='17' rx='2'/%3E%3Cpath d='M4 33h32m6-18 4 4-4 4'/%3E%3C/svg%3E"); }
+
 /* Endpoint & Intune dedicated service page */
 .endpoint-page { background: var(--color-bg-primary); }
 .endpoint-wrap { width: min(1320px, calc(100% - 40px)); margin: 0 auto; }
@@ -5354,3 +5365,7 @@ body:not(.home-page) .founder-authority::after {
         text-align: center;
     }
 }
+
+.endpoint-page, .endpoint-page main, .endpoint-page .endpoint-hero, .endpoint-page .endpoint-section, .endpoint-page .endpoint-section-alt, .endpoint-page .endpoint-final-cta { background: var(--color-bg-primary); }
+.endpoint-page .endpoint-section-alt { border-block-color: transparent; }
+.endpoint-page .endpoint-card-grid article::before, .endpoint-page .endpoint-detail-list article::before { border: 0; border-radius: 0; box-shadow: none; background-color: transparent; background-position: center; background-repeat: no-repeat; background-size: 100%; }
