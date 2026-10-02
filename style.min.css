@@ -707,9 +707,19 @@ body:not(.home-page) .top-bar+nav {
 }
 
 .home-page .services-showcase-grid {
-    grid-template-columns: minmax(0, 1.1fr) repeat(2, minmax(0, 0.7fr));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: stretch;
-    gap: 16px;
+    gap: 14px;
+}
+
+.home-page .supporting-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.home-page .supporting-services-grid .service-card:last-child {
+    grid-column: span 2;
 }
 
 .home-page .services-showcase-grid .service-card {
@@ -725,10 +735,9 @@ body:not(.home-page) .top-bar+nav {
 }
 
 .home-page .featured-service-panel {
-    grid-row: span 3;
     position: relative;
     overflow: hidden;
-    min-height: 508px !important;
+    min-height: 344px !important;
     padding: 36px !important;
     border-color: rgba(255, 107, 53, 0.38) !important;
 }
@@ -758,7 +767,7 @@ body:not(.home-page) .top-bar+nav {
     position: absolute;
     right: 18px;
     bottom: 44px;
-    width: min(64%, 280px);
+    width: min(58%, 300px);
     color: rgba(148, 163, 184, 0.7);
 }
 
@@ -787,18 +796,18 @@ body:not(.home-page) .top-bar+nav {
 
 @media (max-width: 900px) {
     .home-page .services-showcase-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
     }
 
     .home-page .featured-service-panel {
-        grid-column: span 2;
+        grid-column: auto;
         grid-row: auto;
         min-height: 420px !important;
     }
 }
 
 @media (max-width: 600px) {
-    .home-page .services-nav {
+.home-page .services-nav {
         margin-bottom: 32px;
         border-radius: var(--radius-lg);
     }
@@ -810,6 +819,14 @@ body:not(.home-page) .top-bar+nav {
 
     .home-page .services-showcase-grid {
         grid-template-columns: 1fr;
+    }
+
+    .home-page .supporting-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .supporting-services-grid .service-card:last-child {
+        grid-column: auto;
     }
 
     .home-page .featured-service-panel {
