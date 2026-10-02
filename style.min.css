@@ -871,6 +871,14 @@ body:not(.home-page) .top-bar+nav {
 .endpoint-page .endpoint-section-alt { border-block-color: transparent; }
 .endpoint-page .endpoint-card-grid article::before, .endpoint-page .endpoint-detail-list article::before { border: 0; border-radius: 0; box-shadow: none; background-color: transparent; background-position: center; background-repeat: no-repeat; background-size: 100%; }
 
+/* Final shared alignment grid for the dedicated Endpoint & Intune route. */
+.endpoint-page .endpoint-wrap { width: min(1280px, calc(100% - 56px)); margin-inline: auto; }
+.endpoint-page .endpoint-hero-grid { gap: 16px; }
+.endpoint-page .endpoint-hero-art { width: min(100%, 480px); }
+.endpoint-page .endpoint-pills { width: 100%; }
+.endpoint-page footer .footer-content, .endpoint-page footer .footer-bottom { width: min(1280px, calc(100% - 56px)); margin-inline: auto; }
+@media (max-width: 700px) { .endpoint-page .endpoint-wrap, .endpoint-page footer .footer-content, .endpoint-page footer .footer-bottom { width: min(100% - 32px, 1280px); } .endpoint-page .endpoint-hero-art { width: min(100%, 440px); } }
+
 /* Endpoint & Intune density correction: retain the system, reduce the scale. */
 .endpoint-page .endpoint-wrap { width:min(1340px,calc(100% - 48px)); }
 .endpoint-page .endpoint-hero { min-height:380px; padding:72px 0 42px; }
