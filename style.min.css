@@ -947,7 +947,7 @@ body:not(.home-page) .top-bar+nav {
 @media (max-width: 600px) { .endpoint-wrap { width:min(100% - 32px, 1320px); }.endpoint-hero { padding:70px 0 42px; }.endpoint-pills { border-radius:var(--radius-lg); }.endpoint-section { padding:60px 0; }.endpoint-card-grid, .endpoint-process { grid-template-columns:1fr; }.endpoint-detail-list article { grid-template-columns:1fr; gap:8px; }.endpoint-final-cta .endpoint-wrap { display:block; }.endpoint-final-cta .endpoint-actions { margin-top:24px; }.endpoint-card-grid article { min-height:0; }.endpoint-faq details { padding:0 18px; } }
 
 /* Endpoint & Intune reference-layout correction */
-.endpoint-page .endpoint-wrap { width: min(1480px, calc(100% - 64px)); }
+.endpoint-page .endpoint-wrap { width: 100%; max-width: 1360px; margin-inline: auto; padding-inline: 20px; }
 .endpoint-page .endpoint-hero { min-height: 390px; padding: 88px 0 44px; background: #0f1b30; }
 .endpoint-page .endpoint-hero-grid { grid-template-columns: 44% 56%; gap: 20px; }
 .endpoint-page .endpoint-hero h1 { font-size: clamp(3.4rem, 5.2vw, 4.25rem); margin-bottom: 22px; }
@@ -983,7 +983,7 @@ body:not(.home-page) .top-bar+nav {
 .endpoint-page .endpoint-process li { min-height:150px; padding:12px 30px 12px 70px; border:0; border-radius:0; background:transparent; }
 .endpoint-page .endpoint-process li::before { top:10px; left:10px; width:42px; height:42px; display:grid; place-items:center; border:2px solid var(--color-brand-primary); border-radius:50%; }
 .endpoint-page .endpoint-process li:not(:last-child)::after { content:'→'; position:absolute; top:16px; right:-8px; color:var(--color-brand-primary); font-size:1.5rem; }
-.endpoint-page .endpoint-faq { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; max-width:none; }
+.endpoint-page .endpoint-faq { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
 .endpoint-page .endpoint-faq .endpoint-heading { grid-column:1/-1; }
 .endpoint-page .endpoint-faq details { min-height:205px; margin:0; padding:0 20px; }
 .endpoint-page .endpoint-faq summary { min-height:78px; padding-right:26px; position:relative; font-size:1rem; }
@@ -992,7 +992,7 @@ body:not(.home-page) .top-bar+nav {
 .endpoint-page .endpoint-final-cta .endpoint-wrap { min-height:230px; padding:40px; display:flex; align-items:center; border:1px solid var(--color-brand-primary); border-radius:16px; background:#1e293b; }
 .endpoint-page .endpoint-final-cta h2::before { content:'Ready to get started?'; display:block; margin-bottom:12px; color:var(--color-brand-primary); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; }
 @media (max-width: 1100px) { .endpoint-page .endpoint-card-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }.endpoint-page .endpoint-support-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
-@media (max-width: 700px) { .endpoint-page .endpoint-wrap { width:min(100% - 32px,1480px); }.endpoint-page .endpoint-hero { min-height:0; padding:70px 0 32px; }.endpoint-page .endpoint-hero-grid { grid-template-columns:1fr; }.endpoint-page .endpoint-hero h1 { font-size:clamp(2.7rem,14vw,3.6rem); }.endpoint-page .endpoint-hero-art { justify-self:center; }.endpoint-page .endpoint-pills { border-radius:12px; }.endpoint-page .endpoint-section { padding:60px 0; }.endpoint-page .endpoint-card-grid, .endpoint-page .endpoint-detail-list, .endpoint-page .endpoint-support-grid, .endpoint-page .endpoint-faq { grid-template-columns:1fr; }.endpoint-page .endpoint-detail-list article { padding-left:76px; }.endpoint-page .endpoint-process { grid-template-columns:1fr; gap:8px; }.endpoint-page .endpoint-process li:not(:last-child)::after { top:auto; right:auto; bottom:-15px; left:20px; transform:rotate(90deg); }.endpoint-page .endpoint-final-cta .endpoint-wrap { display:block; padding:30px; }.endpoint-page .endpoint-final-cta .endpoint-actions { margin-top:24px; } }
+@media (max-width: 700px) { .endpoint-page .endpoint-wrap { width:100%; max-width:1360px; padding-inline:20px; }.endpoint-page .endpoint-hero { min-height:0; padding:70px 0 32px; }.endpoint-page .endpoint-hero-grid { grid-template-columns:1fr; }.endpoint-page .endpoint-hero h1 { font-size:clamp(2.7rem,14vw,3.6rem); }.endpoint-page .endpoint-hero-art { justify-self:center; }.endpoint-page .endpoint-pills { border-radius:12px; }.endpoint-page .endpoint-section { padding:60px 0; }.endpoint-page .endpoint-card-grid, .endpoint-page .endpoint-detail-list, .endpoint-page .endpoint-support-grid, .endpoint-page .endpoint-faq { grid-template-columns:1fr; }.endpoint-page .endpoint-detail-list article { padding-left:76px; }.endpoint-page .endpoint-process { grid-template-columns:1fr; gap:8px; }.endpoint-page .endpoint-process li:not(:last-child)::after { top:auto; right:auto; bottom:-15px; left:20px; transform:rotate(90deg); }.endpoint-page .endpoint-final-cta .endpoint-wrap { display:block; padding:30px; }.endpoint-page .endpoint-actions { margin-top:24px; } }
 
 .home-page .more-capabilities strong {
     color: var(--color-text-secondary);
