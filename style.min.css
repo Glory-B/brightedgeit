@@ -638,7 +638,11 @@ body:not(.home-page) .top-bar+nav {
 
 .home-page #services.home-section {
     padding-top: 40px;
-    padding-bottom: 56px;
+    padding-bottom: 60px;
+}
+
+.home-page #services.home-section > .container {
+    max-width: 1360px;
 }
 
 .home-page .services-nav {
@@ -649,9 +653,10 @@ body:not(.home-page) .top-bar+nav {
     backdrop-filter: none;
     display: flex;
     gap: 8px;
-    margin: 0 auto 36px;
+    width: calc(100% - 48px);
+    max-width: 1280px;
+    margin: 0 auto 30px;
     padding: 6px;
-    max-width: 1180px;
     overflow-x: auto;
     border: 1px solid var(--color-border-subtle);
     border-radius: var(--home-radius-pill);
@@ -703,6 +708,31 @@ body:not(.home-page) .top-bar+nav {
 
 .home-page .services-eyebrow,
 .home-page .featured-service-eyebrow {
+    color: var(--color-brand-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.home-page .services-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 0 14px;
+    text-align: center;
+}
+
+.home-page .services-eyebrow::before,
+.home-page .services-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 2px;
+    background: var(--color-brand-primary);
+}
+
+.home-page .featured-service-eyebrow {
     margin: 0 0 8px;
     color: var(--color-brand-primary);
     font-size: 0.78rem;
@@ -714,13 +744,13 @@ body:not(.home-page) .top-bar+nav {
 .home-page .services-showcase-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: stretch;
-    gap: 14px;
+    gap: 16px;
 }
 
 .home-page .supporting-services-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    gap: 12px;
 }
 
 .home-page .supporting-services-grid .service-card:last-child {
@@ -728,7 +758,7 @@ body:not(.home-page) .top-bar+nav {
 }
 
 .home-page .services-showcase-grid .service-card {
-    min-height: 238px;
+    min-height: 0;
     padding: 26px;
     border-radius: var(--radius-lg);
     box-shadow: none;
@@ -742,9 +772,9 @@ body:not(.home-page) .top-bar+nav {
 .home-page .featured-service-panel {
     position: relative;
     overflow: hidden;
-    min-height: 344px !important;
-    padding: 36px !important;
-    border-color: rgba(255, 107, 53, 0.38) !important;
+    min-height: 500px !important;
+    padding: 30px !important;
+    border-color: rgba(255, 107, 53, 0.68) !important;
 }
 
 .home-page .featured-service-panel .service-icon {
@@ -753,6 +783,13 @@ body:not(.home-page) .top-bar+nav {
 
 .home-page .featured-service-panel h3 {
     font-size: clamp(1.8rem, 3vw, 2.55rem);
+    max-width: 55%;
+    margin-bottom: 10px;
+}
+
+.home-page .featured-service-panel > p:not(.featured-service-eyebrow),
+.home-page .featured-service-list {
+    max-width: 55%;
 }
 
 .home-page .featured-service-list {
@@ -770,9 +807,9 @@ body:not(.home-page) .top-bar+nav {
 
 .home-page .featured-service-illustration {
     position: absolute;
-    right: 18px;
-    bottom: 44px;
-    width: min(58%, 300px);
+    right: 22px;
+    bottom: 78px;
+    width: min(43%, 340px);
     color: rgba(148, 163, 184, 0.7);
 }
 
@@ -791,12 +828,81 @@ body:not(.home-page) .top-bar+nav {
 
 .home-page .featured-service-panel .learn-more {
     position: absolute;
-    left: 36px;
-    bottom: 36px;
+    left: 30px;
+    bottom: 30px;
+    display: inline-flex;
+    min-height: 48px;
+    padding: 0 18px;
+    border-radius: var(--radius-md);
+    background: var(--color-brand-primary);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
 }
 
 .home-page .more-capabilities {
-    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: none;
+    margin: 32px 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.home-page .more-capabilities::before,
+.home-page .more-capabilities::after {
+    content: '';
+    flex: 1 1 100px;
+    height: 1px;
+    background: var(--color-border-highlight);
+}
+
+.home-page .more-capabilities-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.home-page .more-capabilities strong {
+    color: var(--color-text-secondary);
+}
+
+.home-page .more-capabilities a {
+    color: var(--color-text-secondary);
+}
+
+.home-page .more-capabilities a:hover,
+.home-page .more-capabilities a:focus-visible {
+    color: var(--color-brand-primary);
+}
+
+.home-page .supporting-services-grid .service-card {
+    min-height: 198px;
+    padding: 26px;
+}
+
+.home-page .supporting-services-grid .service-card:last-child {
+    min-height: 164px;
+}
+
+.home-page .supporting-services-grid .service-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 14px;
+}
+
+.home-page .supporting-services-grid .service-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.08rem;
+}
+
+.home-page .supporting-services-grid .service-card p {
+    margin-bottom: 14px;
+    font-size: 0.84rem;
+    line-height: 1.5;
 }
 
 @media (max-width: 900px) {
@@ -813,7 +919,8 @@ body:not(.home-page) .top-bar+nav {
 
 @media (max-width: 600px) {
 .home-page .services-nav {
-        margin-bottom: 32px;
+        width: calc(100% - 32px);
+        margin-bottom: 30px;
         border-radius: var(--radius-lg);
     }
 
@@ -836,8 +943,8 @@ body:not(.home-page) .top-bar+nav {
 
     .home-page .featured-service-panel {
         grid-column: auto;
-        min-height: 410px !important;
-        padding: 28px !important;
+        min-height: 0 !important;
+        padding: 28px 28px 96px !important;
     }
 
     .home-page .featured-service-panel .learn-more {
@@ -846,8 +953,30 @@ body:not(.home-page) .top-bar+nav {
     }
 
     .home-page .featured-service-illustration {
-        right: 10px;
-        width: 58%;
+        position: static;
+        width: min(100%, 260px);
+        margin: 18px 0 0 auto;
+    }
+
+    .home-page .featured-service-panel h3,
+    .home-page .featured-service-panel > p:not(.featured-service-eyebrow),
+    .home-page .featured-service-list {
+        max-width: none;
+    }
+
+    .home-page .more-capabilities {
+        gap: 10px;
+    }
+
+    .home-page .more-capabilities-content {
+        justify-content: center;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    .home-page .supporting-services-grid .service-card,
+    .home-page .supporting-services-grid .service-card:last-child {
+        min-height: 0;
     }
 }
 
