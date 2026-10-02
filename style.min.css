@@ -948,48 +948,49 @@ body:not(.home-page) .top-bar+nav {
 
 /* Endpoint & Intune reference-layout correction */
 .endpoint-page .endpoint-wrap { width: 100%; max-width: 1360px; margin-inline: auto; padding-inline: 20px; }
-.endpoint-page .endpoint-hero { min-height: 390px; padding: 88px 0 44px; background: #0f1b30; }
+.endpoint-page .endpoint-hero { min-height: 0; padding: 68px 0 38px; background: #0f1b30; }
 .endpoint-page .endpoint-hero-grid { grid-template-columns: 44% 56%; gap: 20px; }
-.endpoint-page .endpoint-hero h1 { font-size: clamp(3.4rem, 5.2vw, 4.25rem); margin-bottom: 22px; }
-.endpoint-page .endpoint-eyebrow { display:flex; align-items:center; justify-content:center; gap:12px; font-size:.8rem; }
+.endpoint-page .endpoint-hero h1 { font-size: clamp(2.875rem, 3.4vw, 3.125rem); line-height:1.1; margin-bottom:16px; }
+.endpoint-page .endpoint-eyebrow { display:flex; align-items:center; justify-content:center; gap:12px; font-size:.68rem; }
 .endpoint-page .endpoint-heading .endpoint-eyebrow::before, .endpoint-page .endpoint-heading .endpoint-eyebrow::after { content:''; width:30px; height:2px; background:var(--color-brand-primary); }
-.endpoint-page .endpoint-hero .endpoint-eyebrow { justify-content:flex-start; font-size:.86rem; }
-.endpoint-page .endpoint-lead { max-width: 650px; font-size:1.15rem; line-height:1.7; }
-.endpoint-page .endpoint-actions .cta-btn, .endpoint-page .endpoint-actions .cta-link { min-height:54px; display:inline-flex; align-items:center; padding:0 24px; border-radius:10px; font-size:1rem; }
+.endpoint-page .endpoint-hero .endpoint-eyebrow { justify-content:flex-start; font-size:.68rem; }
+.endpoint-page .endpoint-lead { max-width: 600px; font-size:1rem; line-height:1.6; }
+.endpoint-page .endpoint-actions .cta-btn, .endpoint-page .endpoint-actions .cta-link { min-height:44px; display:inline-flex; align-items:center; padding:0 20px; border-radius:10px; font-size:.9rem; }
 .endpoint-page .endpoint-actions .cta-link { border:1px solid var(--color-brand-primary); color:var(--color-text-primary); }
-.endpoint-page .endpoint-hero-art { width: min(100%, 650px); justify-self:end; }
-.endpoint-page .endpoint-service-nav { padding: 0 0 34px; margin-top:-4px; background:#0f1b30; }
-.endpoint-page .endpoint-pills { min-height:66px; padding:7px; border-radius:12px; }
-.endpoint-page .endpoint-pills a { min-height:50px; padding:10px 18px; font-size:.92rem; position:relative; }
+.endpoint-page .endpoint-hero-art { width: min(100%, 560px); justify-self:end; }
+.endpoint-page .endpoint-service-nav { padding: 0 0 24px; margin-top:-4px; background:#0f1b30; }
+.endpoint-page .endpoint-pills { min-height:60px; padding:5px; border-radius:12px; }
+.endpoint-page .endpoint-pills a { min-height:48px; padding:8px 14px; font-size:.84rem; position:relative; }
 .endpoint-page .endpoint-pills a + a { border-left:1px solid rgba(148,163,184,.18); }
 .endpoint-page .endpoint-pills .is-current::after { content:''; position:absolute; right:18px; bottom:4px; left:18px; height:2px; background:var(--color-brand-primary); }
-.endpoint-page .endpoint-section { padding:72px 0; }
+.endpoint-page .endpoint-section { padding:56px 0; }
 .endpoint-page .endpoint-section-alt { background:#132039; }
-.endpoint-page .endpoint-heading { max-width:850px; margin-bottom:34px; }
-.endpoint-page .endpoint-heading h2 { font-size:clamp(2.3rem,3.2vw,2.8rem); }
-.endpoint-page .endpoint-heading > p:last-child { font-size:1.12rem; }
+.endpoint-page .endpoint-heading { max-width:850px; margin-bottom:28px; }
+.endpoint-page .endpoint-heading h2 { margin-bottom:8px; font-size:clamp(1.875rem,2.3vw,2.125rem); }
+.endpoint-page .endpoint-heading > p:last-child { font-size:1rem; }
 .endpoint-page .endpoint-card-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap:12px; }
-.endpoint-page .endpoint-card-grid article { min-height:245px; padding:24px 20px; }
-.endpoint-page .endpoint-card-grid article::before { width:38px; height:38px; margin-bottom:20px; border-radius:50%; box-shadow: inset 0 0 0 7px var(--color-bg-secondary); }
-.endpoint-page .endpoint-card-grid h3 { font-size:1.03rem; line-height:1.3; }
-.endpoint-page .endpoint-card-grid p { font-size:.9rem; line-height:1.55; }
+.endpoint-page .endpoint-card-grid article { min-height:0; padding:20px 18px; }
+.endpoint-page .endpoint-card-grid article::before { width:30px; height:30px; margin-bottom:14px; border-radius:50%; box-shadow: inset 0 0 0 7px var(--color-bg-secondary); }
+.endpoint-page .endpoint-card-grid h3 { font-size:1rem; line-height:1.3; }
+.endpoint-page .endpoint-card-grid p { font-size:.86rem; line-height:1.55; }
 .endpoint-page .endpoint-detail-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; max-width:none; }
-.endpoint-page .endpoint-detail-list article { min-height:154px; grid-template-columns:1fr; gap:10px; padding:26px 28px 26px 86px; position:relative; }
-.endpoint-page .endpoint-detail-list article::before { content:''; position:absolute; left:28px; width:34px; height:34px; border:2px solid var(--color-brand-primary); border-radius:8px; }
-.endpoint-page .endpoint-detail-list h3 { font-size:1.08rem; }
-.endpoint-page .endpoint-support-grid article { min-height:260px; padding:24px 16px; }
+.endpoint-page .endpoint-detail-list article { min-height:0; grid-template-columns:1fr; gap:10px; padding:20px 20px 20px 68px; position:relative; }
+.endpoint-page .endpoint-detail-list article::before { content:''; position:absolute; left:22px; width:30px; height:30px; border:2px solid var(--color-brand-primary); border-radius:8px; }
+.endpoint-page .endpoint-detail-list h3 { font-size:1rem; }
+.endpoint-page .endpoint-support-grid article { min-height:0; padding:20px 18px; }
 .endpoint-page .endpoint-support-grid ul { font-size:.83rem; line-height:1.45; }
 .endpoint-page .endpoint-process { grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; align-items:center; }
-.endpoint-page .endpoint-process li { min-height:150px; padding:12px 30px 12px 70px; border:0; border-radius:0; background:transparent; }
-.endpoint-page .endpoint-process li::before { top:10px; left:10px; width:42px; height:42px; display:grid; place-items:center; border:2px solid var(--color-brand-primary); border-radius:50%; }
+.endpoint-page .endpoint-process li { min-height:0; padding:10px 18px 10px 58px; border:0; border-radius:0; background:transparent; }
+.endpoint-page .endpoint-process li::before { top:10px; left:8px; width:34px; height:34px; display:grid; place-items:center; border:2px solid var(--color-brand-primary); border-radius:50%; }
 .endpoint-page .endpoint-process li:not(:last-child)::after { content:'→'; position:absolute; top:16px; right:-8px; color:var(--color-brand-primary); font-size:1.5rem; }
 .endpoint-page .endpoint-faq { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
 .endpoint-page .endpoint-faq .endpoint-heading { grid-column:1/-1; }
-.endpoint-page .endpoint-faq details { min-height:205px; margin:0; padding:0 20px; }
-.endpoint-page .endpoint-faq summary { min-height:78px; padding-right:26px; position:relative; font-size:1rem; }
+.endpoint-page .endpoint-faq details { min-height:0; margin:0; padding:0 18px; }
+.endpoint-page .endpoint-faq summary { min-height:56px; padding-right:26px; position:relative; font-size:.88rem; }
 .endpoint-page .endpoint-faq summary::after { content:'+'; position:absolute; right:0; color:var(--color-brand-primary); font-size:1.6rem; }
-.endpoint-page .endpoint-final-cta { padding:48px 0; background:var(--color-bg-primary); border:0; }
-.endpoint-page .endpoint-final-cta .endpoint-wrap { min-height:230px; padding:40px; display:flex; align-items:center; border:1px solid var(--color-brand-primary); border-radius:16px; background:#1e293b; }
+.endpoint-page .endpoint-final-cta { padding:40px 0; background:var(--color-bg-primary); border:0; }
+.endpoint-page .endpoint-final-cta .endpoint-wrap { min-height:0; padding:28px; display:flex; align-items:center; border:1px solid var(--color-brand-primary); border-radius:16px; background:#1e293b; }
+.endpoint-page .endpoint-final-cta h2 { font-size:clamp(1.75rem,2vw,2rem); }
 .endpoint-page .endpoint-final-cta h2::before { content:'Ready to get started?'; display:block; margin-bottom:12px; color:var(--color-brand-primary); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; }
 @media (max-width: 1100px) { .endpoint-page .endpoint-card-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }.endpoint-page .endpoint-support-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (max-width: 700px) { .endpoint-page .endpoint-wrap { width:100%; max-width:1360px; padding-inline:20px; }.endpoint-page .endpoint-hero { min-height:0; padding:70px 0 32px; }.endpoint-page .endpoint-hero-grid { grid-template-columns:1fr; }.endpoint-page .endpoint-hero h1 { font-size:clamp(2.7rem,14vw,3.6rem); }.endpoint-page .endpoint-hero-art { justify-self:center; }.endpoint-page .endpoint-pills { border-radius:12px; }.endpoint-page .endpoint-section { padding:60px 0; }.endpoint-page .endpoint-card-grid, .endpoint-page .endpoint-detail-list, .endpoint-page .endpoint-support-grid, .endpoint-page .endpoint-faq { grid-template-columns:1fr; }.endpoint-page .endpoint-detail-list article { padding-left:76px; }.endpoint-page .endpoint-process { grid-template-columns:1fr; gap:8px; }.endpoint-page .endpoint-process li:not(:last-child)::after { top:auto; right:auto; bottom:-15px; left:20px; transform:rotate(90deg); }.endpoint-page .endpoint-final-cta .endpoint-wrap { display:block; padding:30px; }.endpoint-page .endpoint-actions { margin-top:24px; } }
