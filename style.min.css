@@ -6061,3 +6061,31 @@ footer .footer-bottom { padding-top: 24px; font-size: .8125rem; }
 
     footer { padding-top: 48px; }
 }
+
+/* Pricing hero: original workstation image, positioned right with protected copy space. */
+.pricing-page-hero {
+    background: #071322 url('assets/pricing-hero-workstation.webp') center right / cover no-repeat;
+}
+.pricing-page-hero::before {
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(5,17,36,.99) 0%, rgba(5,17,36,.91) 36%, rgba(5,17,36,.52) 61%, rgba(5,17,36,.13) 100%);
+    mask-image: none;
+}
+.pricing-hero-grid {
+    grid-template-columns: minmax(0,45%) minmax(0,55%);
+    min-height: 460px;
+    padding-block: 64px;
+    gap: 0;
+}
+.pricing-hero-copy { max-width: 585px; }
+
+@media (max-width: 900px) {
+    .pricing-page-hero { background-position: 72% center; }
+    .pricing-hero-grid { grid-template-columns: minmax(0,1fr); min-height: 440px; }
+}
+
+@media (max-width: 760px) {
+    .pricing-page-hero { background-position: 74% center; }
+    .pricing-page-hero::before { background: linear-gradient(90deg, rgba(5,17,36,.98) 0%, rgba(5,17,36,.91) 52%, rgba(5,17,36,.68) 100%); }
+    .pricing-hero-grid { min-height: 0; padding-block: 64px 48px; }
+}
