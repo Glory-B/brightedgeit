@@ -696,6 +696,12 @@ body:not(.home-page) .top-bar+nav {
     background: var(--color-bg-tertiary);
 }
 
+@media (min-width: 1024px) {
+    .home-page .services-nav { width: 100%; overflow-x: visible; }
+    .home-page .service-nav-link { flex: 1 1 0; gap: 6px; padding-inline: 10px; }
+    .endpoint-page .endpoint-pills { overflow-x: visible; }
+}
+
 .home-page .service-nav-link:focus-visible {
     outline: 2px solid var(--color-brand-primary);
     outline-offset: 2px;
