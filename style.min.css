@@ -5794,7 +5794,7 @@ body:not(.home-page) .founder-authority::after {
    The dedicated service pages define the shared desktop scale.
    ================================================================= */
 :root {
-    --site-content-max: 1040px;
+    --site-content-max: 1024px;
     --site-gutter: 20px;
     --site-max-width: var(--site-content-max);
     --site-horizontal-padding: var(--site-gutter);
@@ -6062,6 +6062,11 @@ footer .footer-bottom { padding-top: 24px; font-size: .8125rem; }
     .contact-form { padding: 20px; }
 
     footer { padding-top: 48px; }
+}
+
+@media (max-width: 340px) {
+    .services-grid,
+    .testimonials-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Pricing hero: original workstation image, positioned right with protected copy space. */
