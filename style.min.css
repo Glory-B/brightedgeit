@@ -5889,6 +5889,8 @@ body:not(.endpoint-page) .hero p {
 .endpoint-page .endpoint-card-grid article,
 .endpoint-page .endpoint-detail-list article,
 .endpoint-page .endpoint-support-grid article { padding: var(--card-padding); }
+.endpoint-page .endpoint-detail-list article { padding-left: 68px; }
+.endpoint-page .endpoint-detail-list article::before { top: 20px; }
 .endpoint-page .endpoint-card-grid h3,
 .endpoint-page .endpoint-detail-list h3 { font-size: var(--card-title-size); }
 .endpoint-page .endpoint-card-grid p,
