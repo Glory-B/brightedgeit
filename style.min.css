@@ -696,9 +696,15 @@ body:not(.home-page) .top-bar+nav {
     background: var(--color-bg-tertiary);
 }
 
+@media (min-width: 900px) {
+    .home-page .services-nav { width: 100%; overflow-x: visible; border-radius: 12px; }
+    .home-page .service-nav-link { min-height: 48px; justify-content: center; flex: 1 0 max-content; gap: 0; padding: 8px 10px; font-size: .84rem; position: relative; }
+    .home-page .service-nav-link svg { display: none; }
+    .home-page .service-nav-link + .service-nav-link { border-left: 1px solid rgba(148,163,184,.18); }
+    .home-page .service-nav-link.is-featured::after { content: ''; position: absolute; right: 18px; bottom: 4px; left: 18px; height: 2px; background: var(--color-brand-primary); }
+}
+
 @media (min-width: 1024px) {
-    .home-page .services-nav { width: 100%; overflow-x: visible; }
-    .home-page .service-nav-link { flex: 1 1 0; gap: 6px; padding-inline: 10px; }
     .endpoint-page .endpoint-pills { overflow-x: visible; }
 }
 
