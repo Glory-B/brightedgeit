@@ -5788,3 +5788,276 @@ body:not(.home-page) .founder-authority::after {
     .pricing-closing-cta::before { left:70%; }
     .pricing-closing-cta .cta-btn { width:100%; }
 }
+
+/* =================================================================
+   Full-site size and spacing normalisation
+   The dedicated service pages define the shared desktop scale.
+   ================================================================= */
+:root {
+    --site-max-width: 1360px;
+    --site-horizontal-padding: 20px;
+    --header-height: 80px;
+    --standard-hero-h1: clamp(2.875rem, 3.25vw, 3.125rem);
+    --marketing-hero-h1: clamp(3.125rem, 3.5vw, 3.5rem);
+    --section-heading-size: clamp(1.875rem, 2.3vw, 2.125rem);
+    --section-copy-size: 1rem;
+    --card-title-size: 1rem;
+    --card-copy-size: .875rem;
+    --card-padding: 20px;
+    --card-gap: 14px;
+    --button-height: 44px;
+    --section-padding: 56px;
+    --container-width: var(--site-max-width);
+}
+
+body { font-size: 15px; line-height: 1.6; }
+
+.container,
+.services-container,
+.methods-container,
+.locations-container,
+.testimonials-container,
+.process-inner,
+.footer-content,
+.footer-bottom {
+    width: 100%;
+    max-width: var(--site-max-width);
+    margin-inline: auto;
+    padding-inline: var(--site-horizontal-padding);
+}
+
+/* Keep the approved desktop header and the shared mobile header on one scale. */
+.site-header { height: var(--header-height); }
+.site-header .nav-content { max-width: var(--site-max-width); padding-inline: var(--site-horizontal-padding); }
+.site-header .nav-link { font-size: .92rem; }
+.site-header .nav-contact-cta { min-height: 44px; }
+
+/* Standardise legacy page heroes without changing their composition or content. */
+body:not(.endpoint-page) .hero {
+    padding: 72px var(--site-horizontal-padding);
+    min-height: 0;
+}
+
+body:not(.endpoint-page) .hero-content { max-width: 680px; }
+body:not(.endpoint-page) .hero h1 {
+    font-size: var(--standard-hero-h1);
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+body:not(.endpoint-page) .hero p {
+    max-width: 640px;
+    margin-bottom: 28px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* The Services and Pricing marketing heroes retain their hierarchy at the shared scale. */
+.services-page-hero-grid { min-height: 0; padding-block: 76px; }
+.services-page-hero h1 { font-size: var(--marketing-hero-h1); }
+.pricing-page-hero h1 { font-size: var(--marketing-hero-h1); }
+.services-page-hero-copy > p:not(.services-kicker),
+.pricing-hero-copy > p:not(.pricing-kicker) { font-size: var(--section-copy-size); }
+.services-primary-strip,
+.services-partner,
+.services-directory,
+.services-closing-cta { padding-block: var(--section-padding); }
+
+/* Existing dedicated service pages remain the reference family. */
+.endpoint-page .endpoint-wrap { max-width: var(--site-max-width); padding-inline: var(--site-horizontal-padding); }
+.endpoint-page .endpoint-hero h1 { font-size: var(--standard-hero-h1); }
+.endpoint-page .endpoint-lead { font-size: 1rem; }
+.endpoint-page .endpoint-section { padding-block: var(--section-padding); }
+.endpoint-page .endpoint-heading h2 { font-size: var(--section-heading-size); }
+.endpoint-page .endpoint-heading > p:last-child { font-size: var(--section-copy-size); }
+.endpoint-page .endpoint-card-grid,
+.endpoint-page .endpoint-detail-list,
+.endpoint-page .endpoint-faq { gap: var(--card-gap); }
+.endpoint-page .endpoint-card-grid article,
+.endpoint-page .endpoint-detail-list article,
+.endpoint-page .endpoint-support-grid article { padding: var(--card-padding); }
+.endpoint-page .endpoint-card-grid h3,
+.endpoint-page .endpoint-detail-list h3 { font-size: var(--card-title-size); }
+.endpoint-page .endpoint-card-grid p,
+.endpoint-page .endpoint-detail-list p { font-size: var(--card-copy-size); }
+
+/* Bring legacy page rhythm and cards into the same density family. */
+.services,
+.feature,
+.testimonials,
+.contact,
+.stats,
+.team-section,
+.why-choose-section,
+.story-section,
+.mission-section,
+.values-section,
+.contact-form-section,
+.contact-methods,
+.locations-section,
+.faq-section,
+.cta-section,
+.video-section,
+.testimonials-section,
+.filter-section,
+.hc-layout,
+.hc-coverage {
+    padding-block: var(--section-padding);
+}
+
+.section-header { margin-bottom: 28px; }
+.section-header h2,
+.section-title,
+.cta-section h2,
+.story-text h2,
+.mission-section h2,
+.values-section h2,
+.why-choose-section h2,
+.hc-section-header h2 { font-size: var(--section-heading-size); }
+.section-subtitle,
+.cta-section p,
+.hc-section-header p { font-size: var(--section-copy-size); }
+.section-subtitle { margin-bottom: 28px; }
+
+.services-strip-heading h2,
+.services-partner h2,
+.services-directory h2,
+.services-closing-cta h2 { font-size: var(--section-heading-size); }
+
+main > section[style*="max-width: 900px"] h2 { font-size: var(--section-heading-size); }
+
+.services-grid,
+.methods-grid,
+.locations-grid,
+.mission-grid,
+.values-grid,
+.why-grid,
+.testimonials-grid,
+.video-grid,
+.faq-grid { gap: var(--card-gap); }
+
+.service-card,
+.method-card,
+.location-card,
+.mission-card,
+.value-card,
+.why-card,
+.video-card,
+.testimonial-card,
+.faq-item { padding: var(--card-padding); }
+.service-card h3,
+.method-card h3,
+.location-card h3,
+.mission-card h3,
+.value-card h3,
+.why-card h3,
+.video-card h3,
+.testimonial-card h3 { font-size: var(--card-title-size); }
+.service-card p,
+.method-card p,
+.location-card p,
+.mission-card p,
+.value-card p,
+.why-card p,
+.video-card p,
+.testimonial-card p { font-size: var(--card-copy-size); line-height: 1.55; }
+.service-icon,
+.method-icon svg,
+.location-icon svg,
+.mission-card .icon { width: 30px; height: 30px; font-size: 30px; }
+
+/* One button height across page families; labels and routes remain unchanged. */
+.cta-btn,
+.cta-link,
+.cta-buttons a,
+.hero-ctas a,
+.hc-hero-ctas a,
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--button-height);
+    padding: 0 20px;
+    font-size: .9rem;
+}
+
+.submit-btn { width: 100%; }
+.contact-form { padding: 28px; }
+.form-row { gap: var(--card-gap); margin-bottom: var(--card-gap); }
+.form-group input,
+.form-group textarea,
+.form-group select { font-size: .95rem; }
+.not-found-card { padding: 28px 20px; }
+.not-found-card h1 { font-size: var(--standard-hero-h1); }
+
+/* Pricing keeps larger package cards while its surrounding rhythm matches the site. */
+.pricing-options,
+.pricing-process,
+.pricing-quote-factors,
+.pricing-closing-cta { padding-block: 64px; }
+.pricing-section-heading h2,
+.pricing-closing-cta h2 { font-size: var(--section-heading-size); }
+.pricing-option-grid,
+.pricing-process-grid,
+.pricing-factor-grid { gap: var(--card-gap); }
+.pricing-closing-cta { padding-block: 64px; }
+
+/* One footer scale, independent of page generation. */
+footer { padding: 56px 0 24px; }
+footer .footer-content { gap: 24px; margin-bottom: 40px; }
+footer .footer-section h4 { margin-bottom: 12px; font-size: 1rem; }
+footer .footer-section p,
+footer .footer-section a { margin-bottom: 8px; font-size: .875rem; line-height: 1.5; }
+footer .footer-bottom { padding-top: 24px; font-size: .8125rem; }
+
+@media (max-width: 760px) {
+    .container,
+    .services-container,
+    .methods-container,
+    .locations-container,
+    .testimonials-container,
+    .process-inner,
+    .footer-content,
+    .footer-bottom,
+    .endpoint-page .endpoint-wrap { padding-inline: var(--site-horizontal-padding); }
+
+    body:not(.endpoint-page) .hero { padding-block: 64px; }
+    body:not(.endpoint-page) .hero h1,
+    .endpoint-page .endpoint-hero h1 { font-size: clamp(2.5rem, 11vw, 3rem); }
+    .services-page-hero-grid { padding-block: 68px; }
+    .services-page-hero h1,
+    .pricing-page-hero h1 { font-size: clamp(2.75rem, 11vw, 3.25rem); }
+    .endpoint-page .endpoint-section,
+    .services,
+    .feature,
+    .testimonials,
+    .contact,
+    .stats,
+    .team-section,
+    .why-choose-section,
+    .story-section,
+    .mission-section,
+    .values-section,
+    .contact-form-section,
+    .contact-methods,
+    .locations-section,
+    .faq-section,
+    .cta-section,
+    .video-section,
+    .testimonials-section,
+    .filter-section,
+    .hc-layout,
+    .hc-coverage { padding-block: 48px; }
+
+    .service-card,
+    .method-card,
+    .location-card,
+    .mission-card,
+    .value-card,
+    .why-card,
+    .video-card,
+    .testimonial-card,
+    .faq-item,
+    .contact-form { padding: 20px; }
+
+    footer { padding-top: 48px; }
+}
