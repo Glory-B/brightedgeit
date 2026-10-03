@@ -5794,7 +5794,7 @@ body:not(.home-page) .founder-authority::after {
    The dedicated service pages define the shared desktop scale.
    ================================================================= */
 :root {
-    --site-content-max: 1180px;
+    --site-content-max: 1140px;
     --site-gutter: 20px;
     --site-max-width: var(--site-content-max);
     --site-horizontal-padding: var(--site-gutter);
