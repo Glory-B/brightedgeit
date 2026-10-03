@@ -5625,3 +5625,4 @@ body:not(.home-page) .founder-authority::after {
     .site-header .nav-links, .site-header .nav-contact-cta { margin-left:0; flex:0 0 auto; }
     .site-header .mega-menu { left:auto; right:-392px; }
 }
+.site-header .mega-menu::before { content:""; position:absolute; top:-8px; right:0; left:0; height:8px; }
