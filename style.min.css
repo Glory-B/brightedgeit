@@ -5621,6 +5621,7 @@ body:not(.home-page) .founder-authority::after {
 @media (min-width: 769px) {
     .site-header .nav-content { justify-content:flex-start; gap:28px; }
     .site-header .logo { margin-right:auto; }
+    .site-header .logo img { width:170px; height:auto; max-height:none; }
     .site-header .nav-links, .site-header .nav-contact-cta { margin-left:0; flex:0 0 auto; }
     .site-header .mega-menu { left:auto; right:-392px; }
 }
