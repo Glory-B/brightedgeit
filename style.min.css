@@ -5710,6 +5710,19 @@ body:not(.home-page) .founder-authority::after {
     .pricing-closing-cta .cta-btn { width:100%; }
 }
 
+/* Cinematic workstation background for the Services hero. */
+.services-page-hero { background:#0b1729 url('assets/services-hero-workstation.png') center right / cover no-repeat; }
+.services-page-hero::before { z-index:0; background:linear-gradient(90deg,rgba(10,23,41,.99) 0%,rgba(10,23,41,.96) 37%,rgba(10,23,41,.72) 56%,rgba(10,23,41,.27) 100%),linear-gradient(0deg,rgba(10,23,41,.32),rgba(10,23,41,.04)); mask-image:none; }
+.services-page-hero::after { content:""; position:absolute; z-index:1; inset:0; pointer-events:none; opacity:.24; background-image:radial-gradient(circle at 67% 24%,rgba(255,107,53,.78) 0 2px,transparent 3px),radial-gradient(circle at 81% 72%,rgba(255,107,53,.62) 0 2px,transparent 3px),linear-gradient(132deg,transparent 46%,rgba(143,164,189,.34) 46.12%,transparent 46.28%),linear-gradient(36deg,transparent 65%,rgba(143,164,189,.24) 65.12%,transparent 65.28%); }
+.services-page-hero-grid { z-index:2; grid-template-columns:minmax(0,640px); min-height:560px; gap:0; }
+.services-page-hero-copy { max-width:630px; }
+
+@media (max-width:760px) {
+    .services-page-hero { background-position:68% center; }
+    .services-page-hero::before { background:linear-gradient(180deg,rgba(10,23,41,.97) 0%,rgba(10,23,41,.9) 64%,rgba(10,23,41,.82) 100%); }
+    .services-page-hero-grid { min-height:0; }
+}
+
 /* Pricing visual correction: stronger card hierarchy and mockup-aligned scale. */
 .pricing-page-hero { background:#101c31; }
 .pricing-hero-grid { grid-template-columns:minmax(0,.92fr) minmax(460px,.78fr); min-height:0; padding-block:76px; gap:30px; }
