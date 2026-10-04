@@ -6337,12 +6337,16 @@ footer .footer-bottom { padding-top: 24px; font-size: .8125rem; }
 .contact-perth { position:relative; isolation:isolate; min-height:360px; padding:0; overflow:hidden; background:#071323; }
 .contact-perth::before { position:absolute; z-index:1; inset:0; content:''; background:linear-gradient(90deg,rgba(5,17,35,.96) 0%,rgba(5,17,35,.88) 42%,rgba(5,17,35,.56) 67%,rgba(5,17,35,.22) 100%); }
 .contact-perth .contact-container { position:relative; z-index:2; display:flex; align-items:center; min-height:360px; }
-.contact-perth-banner { display:block; width:100%; overflow:visible; border:0; border-radius:0; background:transparent; }
+.contact-perth-banner { position:relative; display:block; width:100%; min-height:360px; overflow:visible; border:0; border-radius:0; background:transparent; }
 .contact-perth-image { position:absolute; z-index:0; inset:0; display:block; min-height:0; background:#14233a url('assets/about-perth-banner.webp') center / cover no-repeat; }
-.contact-perth-copy { max-width:580px; min-height:360px; padding:64px 0; background:transparent; }
+.contact-perth-copy { position:relative; z-index:1; max-width:580px; min-height:360px; padding:64px 0; background:transparent; }
+
+@media (min-width:761px) {
+    .contact-perth .contact-container { padding-left:0; }
+}
 
 @media (max-width:760px) {
-    .contact-perth, .contact-perth .contact-container, .contact-perth-copy { min-height:320px; }
+    .contact-perth, .contact-perth .contact-container, .contact-perth-banner, .contact-perth-copy { min-height:320px; }
     .contact-perth-copy { padding:56px 0; }
     .contact-perth::before { background:linear-gradient(90deg,rgba(5,17,35,.96) 0%,rgba(5,17,35,.87) 70%,rgba(5,17,35,.62) 100%); }
 }
