@@ -2663,6 +2663,7 @@ body:not(.home-page) .top-bar + .site-header { top:0; }
 }
 
 .form-success,
+.form-error,
 .error-message {
     display: none;
     padding: 12px;
@@ -2676,6 +2677,13 @@ body:not(.home-page) .top-bar + .site-header { top:0; }
     background: rgba(16, 185, 129, 0.2);
     color: #4ade80;
     border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.form-error.active {
+    display: block;
+    color: #fecaca;
+    background: rgba(239, 68, 68, 0.16);
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .error-message.active {
@@ -5723,7 +5731,7 @@ body:not(.home-page) .founder-authority::after {
 }
 
 /* Cinematic workstation background for the Services hero. */
-.services-page-hero { background:#0b1729 url('assets/services-hero-workstation.png') center right / cover no-repeat; }
+.services-page-hero { background:#0b1729 url('assets/services-hero-workstation.webp') center right / cover no-repeat; }
 .services-page-hero::before { z-index:0; background:linear-gradient(90deg,rgba(10,23,41,.99) 0%,rgba(10,23,41,.96) 37%,rgba(10,23,41,.72) 56%,rgba(10,23,41,.27) 100%),linear-gradient(0deg,rgba(10,23,41,.32),rgba(10,23,41,.04)); mask-image:none; }
 .services-page-hero::after { content:""; position:absolute; z-index:1; inset:0; pointer-events:none; opacity:.24; background-image:radial-gradient(circle at 67% 24%,rgba(255,107,53,.78) 0 2px,transparent 3px),radial-gradient(circle at 81% 72%,rgba(255,107,53,.62) 0 2px,transparent 3px),linear-gradient(132deg,transparent 46%,rgba(143,164,189,.34) 46.12%,transparent 46.28%),linear-gradient(36deg,transparent 65%,rgba(143,164,189,.24) 65.12%,transparent 65.28%); }
 .services-page-hero-grid { z-index:2; grid-template-columns:minmax(0,640px); min-height:560px; gap:0; }

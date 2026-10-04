@@ -22,6 +22,7 @@ const SERVICE_OPTIONS = new Set([
 ]);
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_FORM_BODY_BYTES = 16_384;
 
 function json(status, body) {
     return new Response(JSON.stringify(body), {
@@ -63,7 +64,17 @@ export default {
             return json(415, { error: 'Unsupported form submission format.' });
         }
 
-        const formData = await request.formData();
+        const contentLength = Number(request.headers.get('content-length') || 0);
+        if (Number.isFinite(contentLength) && contentLength > MAX_FORM_BODY_BYTES) {
+            return json(413, { error: 'Form submission is too large.' });
+        }
+
+        let formData;
+        try {
+            formData = await request.formData();
+        } catch {
+            return json(400, { error: 'Invalid form submission.' });
+        }
         for (const [name] of formData.entries()) {
             if (!ALLOWED_FIELDS.has(name)) {
                 return json(400, { error: 'Unsupported form field.' });
@@ -83,7 +94,8 @@ export default {
             return json(400, { error: 'Please complete the required fields and spam check.' });
         }
 
-        if (formData.get('privacy') !== 'on') {
+        const privacyValues = formData.getAll('privacy');
+        if (privacyValues.length !== 1 || privacyValues[0] !== 'on') {
             return json(400, { error: 'Privacy consent is required.' });
         }
 
@@ -111,8 +123,8 @@ export default {
             return json(502, { error: 'Spam verification is unavailable. Please try again.' });
         }
 
-        if (!turnstileResponse.ok || !turnstileResult.success) {
-            return json(400, { error: 'Spam verification failed. Please try again.' });
+        if (!turnstileResponse.ok || !turnstileResult.success || turnstileResult.action !== 'contact') {
+            return json(403, { error: 'Spam verification failed. Please try again.' });
         }
 
         if (!env.CONTACT_EMAIL || !hasSafeHeaderValue(env.EMAIL_FROM)) {
