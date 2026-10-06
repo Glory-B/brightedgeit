@@ -103,7 +103,7 @@
             display: flex;
             align-items: center;
             width: 100%;
-            min-height: 312px;
+            min-height: 380px;
             overflow: hidden;
             border: 1px solid rgba(148, 163, 184, .18);
             border-radius: 18px;
@@ -115,7 +115,7 @@
             z-index: 1;
             inset: 0;
             content: '';
-            background: linear-gradient(90deg, rgba(5, 17, 35, .9) 0%, rgba(5, 17, 35, .72) 37%, rgba(5, 17, 35, .35) 66%, rgba(5, 17, 35, .1) 100%);
+            background: linear-gradient(90deg, rgba(5, 17, 35, .88) 0%, rgba(5, 17, 35, .69) 36%, rgba(5, 17, 35, .3) 66%, rgba(5, 17, 35, .08) 100%);
         }
 
         .contact-redesign .contact-perth-cta .contact-perth-image {
@@ -128,19 +128,33 @@
         .contact-redesign .contact-perth-cta .contact-perth-copy {
             position: relative;
             z-index: 2;
-            max-width: 500px;
+            max-width: 600px;
             min-height: 0;
-            padding: 42px 56px;
+            padding: 54px 60px;
             background: transparent;
         }
 
         .contact-redesign .contact-perth-cta .contact-perth-copy h2 {
-            max-width: 320px;
+            max-width: 440px;
+            font-size: clamp(2.25rem, 4vw, 3rem);
+            line-height: 1.08;
+            letter-spacing: -.035em;
         }
 
         .contact-redesign .contact-perth-cta .contact-perth-copy > p {
             max-width: 400px;
             color: #d5dfed;
+            font-size: 1.0625rem;
+        }
+
+        .contact-redesign .contact-perth-cta .contact-eyebrow {
+            font-size: .78rem;
+        }
+
+        .contact-redesign .contact-perth-cta .cta-btn {
+            min-height: 52px;
+            padding-inline: 30px;
+            font-size: .9375rem;
         }
 
         @media (max-width: 760px) {
@@ -153,7 +167,7 @@
             }
 
             .contact-redesign .contact-perth-cta .contact-perth-banner {
-                min-height: 390px;
+                min-height: 410px;
             }
 
             .contact-redesign .contact-perth-cta .contact-perth-copy {
@@ -163,6 +177,7 @@
 
             .contact-redesign .contact-perth-cta .contact-perth-copy h2 {
                 max-width: 320px;
+                font-size: 2rem;
             }
         }
 
@@ -182,11 +197,11 @@
 
         .contact-footer .footer-content {
             display: grid;
-            grid-template-columns: minmax(220px, 1.55fr) repeat(2, minmax(130px, .8fr)) minmax(190px, 1.05fr);
-            gap: 28px;
+            grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, .7fr)) minmax(0, 1.4fr);
+            gap: 44px;
             margin-bottom: 0;
-            padding-top: 48px;
-            padding-bottom: 38px;
+            padding-top: 54px;
+            padding-bottom: 34px;
         }
 
         .contact-footer .footer-section h4 {
@@ -197,6 +212,7 @@
 
         .contact-footer .footer-brand {
             color: #f8fafc;
+            font-size: 1.125rem;
             letter-spacing: -.035em;
         }
 
@@ -226,6 +242,7 @@
         .contact-footer .footer-contact p a {
             display: inline;
             margin: 0;
+            overflow-wrap: anywhere;
         }
 
         .contact-footer .footer-icon {
@@ -260,7 +277,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 20px;
-            padding-top: 22px;
+            padding-top: 26px;
             border-top: 1px solid rgba(148, 163, 184, .14);
             color: #8fa0b8;
             font-size: .8125rem;
