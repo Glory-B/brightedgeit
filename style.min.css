@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
+
 /* =================================================================
    BrightEdge IT - Main Stylesheet
    Theme: Modern Dark Premium (Slate/Orange)
@@ -6362,4 +6364,53 @@ footer .footer-bottom { padding-top: 24px; font-size: .8125rem; }
 /* Match the approved desktop logo scale without changing the header height. */
 @media (min-width:769px) {
     .site-header .logo img { width:195px; height:auto; max-height:none; }
+}
+
+/* Typography-only readability refinement. */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.endpoint-page .endpoint-heading h2 {
+    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.endpoint-page .endpoint-eyebrow {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.endpoint-page .endpoint-heading > p:last-child,
+.endpoint-page .endpoint-lead,
+.endpoint-page .endpoint-card-grid p,
+.endpoint-page .endpoint-detail-list p {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+.endpoint-page .endpoint-card-grid h3,
+.endpoint-page .endpoint-detail-list h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.32;
+    margin-bottom: 11px;
+}
+
+.endpoint-page .endpoint-cover-grid article {
+    min-height: 212px;
+}
+
+.endpoint-page .endpoint-support-grid ul {
+    gap: 8px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+.endpoint-page .endpoint-support-grid li::before {
+    margin-right: 10px;
 }
