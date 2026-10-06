@@ -77,82 +77,91 @@
             margin-left: auto;
         }
 
-        .contact-redesign .contact-perth {
+        .contact-redesign .contact-faq {
+            padding-bottom: 36px;
+        }
+
+        .contact-redesign .contact-perth-cta {
             min-height: 0;
-            padding: 64px 0;
+            padding: 0 0 32px;
             overflow: visible;
             background: transparent;
         }
 
-        .contact-redesign .contact-perth::before {
+        .contact-redesign .contact-perth-cta::before {
             content: none;
         }
 
-        .contact-redesign .contact-perth .contact-container {
+        .contact-redesign .contact-perth-cta .contact-container {
             display: block;
             min-height: 0;
-            padding-inline: var(--site-gutter);
+            padding-inline: 0;
         }
 
-        .contact-redesign .contact-perth-banner {
+        .contact-redesign .contact-perth-cta .contact-perth-banner {
             position: relative;
             display: flex;
             align-items: center;
             width: 100%;
-            min-height: 340px;
+            min-height: 312px;
             overflow: hidden;
-            border: 1px solid rgba(148, 163, 184, .24);
+            border: 1px solid rgba(148, 163, 184, .18);
             border-radius: 18px;
             background: #14233a;
         }
 
-        .contact-redesign .contact-perth-banner::after {
+        .contact-redesign .contact-perth-cta .contact-perth-banner::after {
             position: absolute;
             z-index: 1;
             inset: 0;
             content: '';
-            background: linear-gradient(90deg, rgba(5, 17, 35, .94) 0%, rgba(5, 17, 35, .84) 44%, rgba(5, 17, 35, .48) 72%, rgba(5, 17, 35, .16) 100%);
+            background: linear-gradient(90deg, rgba(5, 17, 35, .9) 0%, rgba(5, 17, 35, .72) 37%, rgba(5, 17, 35, .35) 66%, rgba(5, 17, 35, .1) 100%);
         }
 
-        .contact-redesign .contact-perth-image {
+        .contact-redesign .contact-perth-cta .contact-perth-image {
             position: absolute;
             inset: 0;
             min-height: 0;
+            background-position: center;
         }
 
-        .contact-redesign .contact-perth-copy {
+        .contact-redesign .contact-perth-cta .contact-perth-copy {
             position: relative;
             z-index: 2;
-            max-width: 540px;
+            max-width: 500px;
             min-height: 0;
-            padding: 48px 56px;
+            padding: 42px 56px;
             background: transparent;
         }
 
-        .contact-redesign .contact-perth-copy h2 {
+        .contact-redesign .contact-perth-cta .contact-perth-copy h2 {
             max-width: 320px;
         }
 
-        .contact-redesign .contact-perth-copy > p {
+        .contact-redesign .contact-perth-cta .contact-perth-copy > p {
             max-width: 400px;
             color: #d5dfed;
         }
 
         @media (max-width: 760px) {
-            .contact-redesign .contact-perth {
-                padding: 48px 0;
+            .contact-redesign .contact-faq {
+                padding-bottom: 28px;
             }
 
-            .contact-redesign .contact-perth-banner {
-                min-height: 400px;
+            .contact-redesign .contact-perth-cta {
+                padding: 0 20px 28px;
             }
 
-            .contact-redesign .contact-perth-copy {
+            .contact-redesign .contact-perth-cta .contact-perth-banner {
+                min-height: 390px;
+            }
+
+            .contact-redesign .contact-perth-cta .contact-perth-copy {
                 max-width: 100%;
                 padding: 38px 28px;
             }
 
-            .contact-redesign .contact-perth-copy h2 {
+            .contact-redesign .contact-perth-cta .contact-perth-copy h2 {
                 max-width: 320px;
             }
         }
@@ -439,7 +448,7 @@
                 </div>
             </div>
         </section>
-        <section class="contact-section contact-perth" aria-labelledby="contact-perth-title">
+        <section class="contact-section contact-perth contact-perth-cta" aria-labelledby="contact-perth-title">
             <div class="contact-container">
                 <div class="contact-perth-banner">
                     <div class="contact-perth-image" role="img" aria-label="Perth cityscape at twilight"></div>
