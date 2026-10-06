@@ -1,4 +1,8 @@
 /* Dedicated service overview: minimal icon-and-divider layout. */
+.endpoint-page .endpoint-service-nav + #overview {
+    padding-top: 32px;
+}
+
 .endpoint-page .service-overview-grid {
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -55,6 +59,10 @@
 }
 
 @media (max-width: 767px) {
+    .endpoint-page .endpoint-service-nav + #overview {
+        padding-top: 28px;
+    }
+
     .endpoint-page .service-overview-grid {
         grid-template-columns: minmax(0, 1fr);
     }
