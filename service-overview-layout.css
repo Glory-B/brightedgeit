@@ -1,0 +1,71 @@
+/* Dedicated service overview: minimal icon-and-divider layout. */
+.endpoint-page .service-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0;
+}
+
+.endpoint-page .service-overview-grid article {
+    display: flex;
+    min-height: 0;
+    padding: 8px 20px 12px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: column;
+}
+
+.endpoint-page .service-overview-grid article:not(:last-child) {
+    border-right: 1px solid rgba(148, 163, 184, .26);
+}
+
+.endpoint-page .service-overview-grid article::before,
+.endpoint-page .service-overview-grid > article > svg {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 16px;
+    flex: 0 0 auto;
+}
+
+.endpoint-page .service-overview-grid h3 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+}
+
+.endpoint-page .service-overview-grid p {
+    margin: 0;
+    font-size: .9rem;
+    line-height: 1.55;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .endpoint-page .service-overview-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 32px;
+    }
+
+    .endpoint-page .service-overview-grid article {
+        padding-inline: 24px;
+    }
+
+    .endpoint-page .service-overview-grid article:nth-child(3n) {
+        border-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .endpoint-page .service-overview-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .endpoint-page .service-overview-grid article {
+        padding: 22px 0;
+        border-right: 0;
+    }
+
+    .endpoint-page .service-overview-grid article:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(148, 163, 184, .22);
+    }
+}
