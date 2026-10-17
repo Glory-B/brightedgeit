@@ -6865,3 +6865,10 @@ footer.contact-footer .footer-bottom a {
 /* Cropped logo (2026-10-17): the image no longer has padding, so size it directly. */
 .site-header .logo img { width:auto; height:36px; max-height:none; }
 @media (max-width:768px) { .site-header .logo img { height:30px; } }
+
+/* On narrow phones the mobile menu already contains a contact CTA; retain the brand and menu trigger in the fixed header. */
+@media (max-width:480px) {
+    .site-header .nav-content { justify-content:space-between; }
+    .site-header .nav-contact-cta { display:none; }
+    .site-header .logo { flex:0 0 auto; }
+}
