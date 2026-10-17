@@ -37,6 +37,11 @@ const SECURITY_HEADERS = {
 // Only the live site gets HSTS and is open to search engines; every other
 // hostname (staging, *.workers.dev, previews) is marked noindex.
 const PRODUCTION_HOSTNAMES = new Set(['brightedgeit.com.au', 'www.brightedgeit.com.au']);
+const TRUSTED_TURNSTILE_HOSTNAMES = new Set([
+    'brightedge-v2-contact.bahigwa.workers.dev',
+    'brightedgeit.com.au',
+    'www.brightedgeit.com.au'
+]);
 const HSTS_VALUE = 'max-age=31536000';
 
 function withSecurityHeaders(response, request) {
@@ -77,6 +82,10 @@ function hasSafeHeaderValue(value) {
 
 function isConfiguredValue(value) {
     return hasSafeHeaderValue(value) && !value.startsWith('REPLACE_WITH_');
+}
+
+function isTrustedTurnstileHostname(hostname) {
+    return typeof hostname === 'string' && TRUSTED_TURNSTILE_HOSTNAMES.has(hostname.toLowerCase());
 }
 
 export default {
@@ -147,8 +156,12 @@ export default {
             return json(400, { error: 'Privacy consent is required.' }, {}, request);
         }
 
-        if (!isConfiguredValue(env.TURNSTILE_SECRET) || !isConfiguredValue(env.TURNSTILE_HOSTNAME)) {
+        const requestHostname = url.hostname.toLowerCase();
+        if (!isConfiguredValue(env.TURNSTILE_SECRET) || !isTrustedTurnstileHostname(env.TURNSTILE_HOSTNAME)) {
             return json(503, { error: 'Contact form verification is not configured.' }, {}, request);
+        }
+        if (!isTrustedTurnstileHostname(requestHostname)) {
+            return json(403, { error: 'Spam verification failed. Please try again.' }, {}, request);
         }
 
         const siteverifyBody = new URLSearchParams({
@@ -171,7 +184,8 @@ export default {
             return json(502, { error: 'Spam verification is unavailable. Please try again.' }, {}, request);
         }
 
-        if (!turnstileResponse.ok || !turnstileResult.success || turnstileResult.action !== 'contact' || turnstileResult.hostname !== env.TURNSTILE_HOSTNAME) {
+        const verifiedHostname = typeof turnstileResult.hostname === 'string' ? turnstileResult.hostname.toLowerCase() : '';
+        if (!turnstileResponse.ok || !turnstileResult.success || turnstileResult.action !== 'contact' || !isTrustedTurnstileHostname(verifiedHostname) || verifiedHostname !== requestHostname) {
             return json(403, { error: 'Spam verification failed. Please try again.' }, {}, request);
         }
 

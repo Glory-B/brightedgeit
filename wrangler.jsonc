@@ -3,6 +3,15 @@
   "name": "brightedge-v2-contact",
   "main": "./src/index.js",
   "compatibility_date": "2026-10-02",
+  "vars": {
+    "CONTACT_TO": "contact@brightedgeit.com.au",
+    "EMAIL_FROM": "noreply@brightedgeit.com.au",
+    "TURNSTILE_SITEKEY": "0x4AAAAAAFY_T5Ci7Q9aalM-",
+    "TURNSTILE_HOSTNAME": "brightedge-v2-contact.bahigwa.workers.dev"
+  },
+  "secrets": {
+    "required": ["TURNSTILE_SECRET"]
+  },
   "assets": {
     "directory": "./",
     "binding": "ASSETS",

@@ -1,0 +1,17 @@
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; script-src 'self' https://plausible.io https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io; frame-src https://challenges.cloudflare.com
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=()
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+
+https://:version.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+https://brightedgeit.com.au/*
+  Strict-Transport-Security: max-age=31536000
+
+https://www.brightedgeit.com.au/*
+  Strict-Transport-Security: max-age=31536000
