@@ -25,3 +25,15 @@ yarn-debug.log*
 *.temp
 Thumbs.db
 desktop.ini
+
+# Apache config (not used by Cloudflare)
+.htaccess
+
+# Unused or legacy files (not linked from any live page)
+assets/logo.png
+assets/og-image.png
+assets/australia-outline.svg
+assets/pricing-hero-workstation.png
+screenshot-desktop.png
+screenshot-mobile.png
+assets/why-brightedge-microsoft-workplace-v2.png

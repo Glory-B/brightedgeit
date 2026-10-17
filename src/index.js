@@ -25,7 +25,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_FORM_BODY_BYTES = 16_384;
 
 const SECURITY_HEADERS = {
-    'Content-Security-Policy': "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://plausible.io https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-src https://challenges.cloudflare.com",
+    'Content-Security-Policy': "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; script-src 'self' https://plausible.io https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io; frame-src https://challenges.cloudflare.com",
     'Cross-Origin-Opener-Policy': 'same-origin',
     'Cross-Origin-Resource-Policy': 'same-origin',
     'Permissions-Policy': 'camera=(), geolocation=(), microphone=(), payment=(), usb=()',
@@ -34,9 +34,20 @@ const SECURITY_HEADERS = {
     'X-Frame-Options': 'SAMEORIGIN'
 };
 
-function withSecurityHeaders(response) {
+// Only the live site gets HSTS and is open to search engines; every other
+// hostname (staging, *.workers.dev, previews) is marked noindex.
+const PRODUCTION_HOSTNAMES = new Set(['brightedgeit.com.au', 'www.brightedgeit.com.au']);
+const HSTS_VALUE = 'max-age=31536000';
+
+function withSecurityHeaders(response, request) {
     const headers = new Headers(response.headers);
     for (const [name, value] of Object.entries(SECURITY_HEADERS)) headers.set(name, value);
+    const hostname = request ? new URL(request.url).hostname : '';
+    if (PRODUCTION_HOSTNAMES.has(hostname)) {
+        headers.set('Strict-Transport-Security', HSTS_VALUE);
+    } else {
+        headers.set('X-Robots-Tag', 'noindex, nofollow');
+    }
     return new Response(response.body, {
         status: response.status,
         statusText: response.statusText,
@@ -44,11 +55,11 @@ function withSecurityHeaders(response) {
     });
 }
 
-function json(status, body, additionalHeaders = {}) {
+function json(status, body, additionalHeaders = {}, request) {
     return withSecurityHeaders(new Response(JSON.stringify(body), {
         status,
         headers: { 'content-type': 'application/json; charset=utf-8', ...additionalHeaders }
-    }));
+    }), request);
 }
 
 function textValue(formData, name, maximumLength, required = false) {
@@ -77,44 +88,44 @@ export default {
                 return withSecurityHeaders(new Response('Method Not Allowed', {
                     status: 405,
                     headers: { Allow: 'GET' }
-                }));
+                }), request);
             }
             if (!isConfiguredValue(env.TURNSTILE_SITEKEY)) {
-                return json(503, { error: 'Form configuration is unavailable.' }, { 'cache-control': 'no-store' });
+                return json(503, { error: 'Form configuration is unavailable.' }, { 'cache-control': 'no-store' }, request);
             }
-            return json(200, { turnstileSitekey: env.TURNSTILE_SITEKEY }, { 'cache-control': 'no-store' });
+            return json(200, { turnstileSitekey: env.TURNSTILE_SITEKEY }, { 'cache-control': 'no-store' }, request);
         }
 
         if (url.pathname !== '/api/contact') {
-            return withSecurityHeaders(await env.ASSETS.fetch(request));
+            return withSecurityHeaders(await env.ASSETS.fetch(request), request);
         }
 
         if (request.method !== 'POST') {
             return withSecurityHeaders(new Response('Method Not Allowed', {
                 status: 405,
                 headers: { Allow: 'POST' }
-            }));
+            }), request);
         }
 
         const contentType = request.headers.get('content-type') || '';
         if (!contentType.includes('application/x-www-form-urlencoded')) {
-            return json(415, { error: 'Unsupported form submission format.' });
+            return json(415, { error: 'Unsupported form submission format.' }, {}, request);
         }
 
         const contentLength = Number(request.headers.get('content-length') || 0);
         if (Number.isFinite(contentLength) && contentLength > MAX_FORM_BODY_BYTES) {
-            return json(413, { error: 'Form submission is too large.' });
+            return json(413, { error: 'Form submission is too large.' }, {}, request);
         }
 
         let formData;
         try {
             formData = await request.formData();
         } catch {
-            return json(400, { error: 'Invalid form submission.' });
+            return json(400, { error: 'Invalid form submission.' }, {}, request);
         }
         for (const [name] of formData.entries()) {
             if (!ALLOWED_FIELDS.has(name)) {
-                return json(400, { error: 'Unsupported form field.' });
+                return json(400, { error: 'Unsupported form field.' }, {}, request);
             }
         }
 
@@ -128,16 +139,16 @@ export default {
         const turnstileToken = textValue(formData, 'cf-turnstile-response', 2048, true);
 
         if (!firstName || !lastName || !email || !EMAIL_PATTERN.test(email) || !message || !turnstileToken || !SERVICE_OPTIONS.has(service)) {
-            return json(400, { error: 'Please complete the required fields and spam check.' });
+            return json(400, { error: 'Please complete the required fields and spam check.' }, {}, request);
         }
 
         const privacyValues = formData.getAll('privacy');
         if (privacyValues.length !== 1 || privacyValues[0] !== 'on') {
-            return json(400, { error: 'Privacy consent is required.' });
+            return json(400, { error: 'Privacy consent is required.' }, {}, request);
         }
 
         if (!isConfiguredValue(env.TURNSTILE_SECRET) || !isConfiguredValue(env.TURNSTILE_HOSTNAME)) {
-            return json(503, { error: 'Contact form verification is not configured.' });
+            return json(503, { error: 'Contact form verification is not configured.' }, {}, request);
         }
 
         const siteverifyBody = new URLSearchParams({
@@ -157,15 +168,15 @@ export default {
             });
             turnstileResult = await turnstileResponse.json();
         } catch {
-            return json(502, { error: 'Spam verification is unavailable. Please try again.' });
+            return json(502, { error: 'Spam verification is unavailable. Please try again.' }, {}, request);
         }
 
         if (!turnstileResponse.ok || !turnstileResult.success || turnstileResult.action !== 'contact' || turnstileResult.hostname !== env.TURNSTILE_HOSTNAME) {
-            return json(403, { error: 'Spam verification failed. Please try again.' });
+            return json(403, { error: 'Spam verification failed. Please try again.' }, {}, request);
         }
 
-        if (!env.CONTACT_EMAIL || !isConfiguredValue(env.EMAIL_FROM)) {
-            return json(503, { error: 'Contact delivery is not configured.' });
+        if (!env.CONTACT_EMAIL || !isConfiguredValue(env.EMAIL_FROM) || !isConfiguredValue(env.CONTACT_TO)) {
+            return json(503, { error: 'Contact delivery is not configured.' }, {}, request);
         }
 
         const notification = [
@@ -183,16 +194,17 @@ export default {
 
         try {
             await env.CONTACT_EMAIL.send({
-                to: null,
+                to: env.CONTACT_TO,
                 from: env.EMAIL_FROM,
+                replyTo: email,
                 subject: 'New BrightEdge IT contact enquiry',
                 text: notification
             });
         } catch (error) {
             console.error('Contact email delivery failed', error && error.code ? error.code : 'unknown');
-            return json(502, { error: 'Unable to send your message. Please try again.' });
+            return json(502, { error: 'Unable to send your message. Please try again.' }, {}, request);
         }
 
-        return json(200, { ok: true });
+        return json(200, { ok: true }, {}, request);
     }
 };

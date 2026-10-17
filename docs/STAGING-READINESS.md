@@ -4,7 +4,7 @@ This repository is prepared to serve static site assets and the contact endpoint
 
 ## Required Cloudflare staging configuration
 
-Before a staging deployment, ChatGPT must confirm and configure these account-side values:
+Before a staging deployment, confirm and configure these account-side values:
 
 1. A distinct staging hostname and the Worker route/custom domain serving it.
 2. A Turnstile widget whose allowed hostname includes that exact staging hostname.
@@ -13,8 +13,9 @@ Before a staging deployment, ChatGPT must confirm and configure these account-si
    - `TURNSTILE_SECRET` — matching secret key.
    - `TURNSTILE_HOSTNAME` — exact expected Turnstile hostname.
    - `EMAIL_FROM` — an onboarded Cloudflare Email Sending sender address.
+   - `CONTACT_TO` — the verified address that receives enquiries (must match the binding's destination address).
 4. The `CONTACT_EMAIL` Email Sending binding destination in `wrangler.jsonc`. Replace `REPLACE_WITH_VERIFIED_DESTINATION_EMAIL` with a verified recipient before deployment.
-5. TLS/HTTPS enforcement and whether HSTS is appropriate for the confirmed staging/production hostnames. HSTS is intentionally not set by the Worker until the target host policy is confirmed.
+5. TLS/HTTPS on the staging and production hostnames. The Worker sends HSTS (`max-age=31536000`, no subdomains) only for `brightedgeit.com.au` and `www.brightedgeit.com.au`; every other hostname gets `X-Robots-Tag: noindex, nofollow` so staging stays out of search results. Update `PRODUCTION_HOSTNAMES` in `src/index.js` if the live domain changes.
 
 Create `.dev.vars` from `.dev.vars.example` for local Worker testing; it is ignored by Git.
 
