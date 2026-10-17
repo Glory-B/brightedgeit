@@ -12,7 +12,7 @@
   "send_email": [
     {
       "name": "CONTACT_EMAIL",
-      "destination_address": "REPLACE_WITH_VERIFIED_DESTINATION_EMAIL"
+      "destination_address": "contact@brightedgeit.com.au"
     }
   ]
 }
